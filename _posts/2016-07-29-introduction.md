@@ -10,7 +10,7 @@ say to who is looking for this great and elegant template, "You can find the
 source now, but please give a merit."
 
 Everything I am working on will be covered here. Now I am working in a project
-of a Telegram bot framework, called [Telex](https://github.com/gavincyi/TeleX).
+of a Telegram bot framework, called [TeleX](https://github.com/gavincyi/TeleX).
 Feel free to take a look into the [design](https://github.com/gavincyi/TeleX/wiki/Design)
 and give any comments.
 
