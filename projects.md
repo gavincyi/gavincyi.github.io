@@ -8,10 +8,15 @@ I am working on the following projects. Welcome to have a look and give your com
 ## [SkyscannerDashboard](http://ec2-52-41-190-175.us-west-2.compute.amazonaws.com:8080/)
 
   The dashboard searches the cheapest flight ticket by the given conditions:
+  
   - Your possible start date
+  
   - Your possible end date
+  
   - Duration of the journal
+  
   - Range of departure and destination cities
+  
   - Carrier
   
   I like travelling around, especially to Europe. The flight ticket prices vary from time to time, cities to cities. The dashboard can help me to:
