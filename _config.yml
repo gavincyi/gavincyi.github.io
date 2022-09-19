@@ -21,6 +21,7 @@ author: Gavin Chan
 
 navbar-links:
   About Me: "aboutme"
+  Talks: "talks"
 #   Resources:
 #     - Beautiful Jekyll: "https://beautifuljekyll.com"
 #     - Learn markdown: "https://www.markdowntutorial.com/"
