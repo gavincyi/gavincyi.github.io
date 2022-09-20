@@ -3,6 +3,7 @@ layout: post
 title: Python Compiler Comparison (1)
 subtitle: Cython, Numba and JAX
 cover-img: https://user-images.githubusercontent.com/10500805/191352528-053504b0-eb32-43e6-b927-b34bcebb83dd.png
+share-img: https://user-images.githubusercontent.com/10500805/191352528-053504b0-eb32-43e6-b927-b34bcebb83dd.png
 tags: [python, cython, numba, jax, engineering]
 comments: true
 ---
