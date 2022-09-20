@@ -3,6 +3,7 @@ layout: post
 title: Python Compiler Comparison (2)
 subtitle: Compare with various JIT compilation libraries - Numba, JAX, Tensorflow and PyTorch
 cover-img: https://user-images.githubusercontent.com/10500805/191351435-f964f8e5-8b1c-4fd6-91e7-33d0a5807516.png
+share-img: https://user-images.githubusercontent.com/10500805/191351435-f964f8e5-8b1c-4fd6-91e7-33d0a5807516.png
 tags: [python, numba, jax, tensorflow, pytorch, engineering]
 comments: true
 ---
