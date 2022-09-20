@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Talks
-subtitle: My public talks in conference
 ---
 
 ## [Why should you learn writing C extension?](https://tw.pycon.org/2020/en-us/conference/talk/1159574667502027113/)
