@@ -7,38 +7,44 @@ comments: true
 
 ## Background
 
-GIL (Global Interpreter Lock) is a mechanism in CPython to synchronise the Python bytecode execution to run only in a single thread at a time. It constitutes a straightforward CPython implementation but becomes obstacles of parallelism in Python. Retrospective [endeavour](https://www.backblaze.com/blog/the-python-gil-past-present-and-future/) in removing GIL did not reward well. Most of the time the workaround options are multiprocessing, an expensive fork and opaque copy-to-write mechanism, and C / C++ extension, e.g. Cython.
+GIL (Global Interpreter Lock) is a mechanism in CPython to synchronise the Python bytecode execution to run only in a single thread at a time. It constitutes a straightforward CPython implementation but becomes obstacles of parallelism in Python. Retrospective [endeavour](https://www.backblaze.com/blog/the-python-gil-past-present-and-future/) in removing GIL did not reward well. Most of the time the workaround options are multiprocessing, an expensive fork with an opaque copy-to-write mechanism, and C / C++ extension, e.g. Cython.
 
 ## Sam Gross's nogil proposal
 
-In 2021, Sam Gross submitted a proposal in Python core [maillist](https://mail.python.org/archives/list/python-dev@python.org/thread/ABR2L6BENNA6UPSPKV474HCS4LWT26GY/)  to remove GIL with a PoC [implementation](https://github.com/colesbury/nogil) in Python 3.9. At first, it did not seem to receive welcoming responses from the core developer team. After a few days, Sam explained his design and PoC implementation (in the thread and private) and the appetite in the thread changed. Basically there are two main parts of his changes
+In 2021, Sam Gross submitted a proposal in Python core [maillist](https://mail.python.org/archives/list/python-dev@python.org/thread/ABR2L6BENNA6UPSPKV474HCS4LWT26GY/) to remove GIL in a PoC [implementation](https://github.com/colesbury/nogil) in Python 3.9. At first, it did not seem to receive welcoming responses from the core developer team. After a few days, Sam explained his design and PoC implementation (in the thread and private) and the appetite in the thread changed. Now it has received spotlight attention whether the PoC change will bring an end to Python infamous limitation in multithreading. 
+
+Basically there are two main parts of his changes
 
 1. Freeing GIL
 2. Accompanied with unrelated changes to speed up the main branch CPython
 
-The latter part has been upstreamed to Python 3.10 and 3.11, and it gives a great improvement in Python runtime. So the question is whether the core development team will apply his nogil change into the future Python.
+The latter part has been upstreamed to Python 3.10 and 3.11, and it gives a great improvement in Python runtime. So the question is whether the core development team will apply his former nogil change into the future CPython main branch.
 
 ## Quick glance on nogil design
+
+The design is mainly around maintaining a thread-safe object state and accessing objects without sacrificing much performance. 
 
 ### Memory allocation
 
 The PoC project replaces the thread-unsafe pymalloc by the thread-safe lightweight allocator [mimalloc](https://github.com/microsoft/mimalloc).
 
-### Object access
-
-__Immortalization__ and __deferred reference counting__ are employed to expedite accessing the objects, to compensate for the overhead introduced in reading frequently accessed objects in multithreading.
-
-Immortalization is used in lightweight singleton objects (like small integers and internal strings), the objects like top-level functions, code objects, and modules are deallocated only during garbage collection.
-
-### Memory deallocation
-
-In current CPython, if an object’s reference count becomes zero, the object is deallocated. In the meantime, the garbage collector (GC) handles the cyclic references. The nogil design covers the "biased reference counting" (Choi, 2018) to
+### Reference count
+In current CPython, if an object’s reference count becomes zero, the object is deallocated. The nogil design covers the "biased reference counting" (Choi, 2018) to
 
 - avoid expensive atomic operations always
 - modify a "local" reference count with non-atomic instruments in owning thread
 - modify a "shared" reference count with atomic instruments in other threads
 
-and moves away from the original global linked-list of objects tracked by GC
+
+__Immortalization__ and __deferred reference counting__ are employed to expedite accessing the objects, to compensate for the overhead introduced in reading frequently accessed objects in multithreading.
+
+Immortalization is used in lightweight singleton objects (like small integers and internal strings), the objects like top-level functions, code objects, and modules are deallocated only during garbage collection.
+
+### Garbage collection
+
+Currently, the garbage collector (GC) [handles](https://devguide.python.org/internals/garbage-collector/) the cyclic references with which reference counting is unable to track. 
+
+The nogil change moves away from the original global linked-list of objects tracked by GC
 
 ![Original global linked-list of objects](https://devguide.python.org/_images/python-cyclic-gc-1-new-page.png)
 
@@ -59,7 +65,7 @@ The experiment is to address the following questions
 
 ## 1. Does Sam's nogil version perform as good as it describes?
 
-### Yes or no.
+### Answer: Yes or no.
 
 I used the same performance test from Sam Gross's design [documentation](https://docs.google.com/document/d/18CXhDb1ygxg-YXNBJNzfzZsDFosB5e6BfnXLlejd9l0/edit)
 to run both Python 3.9 and nogil's version in [pyperformance](https://pyperformance.readthedocs.io/). Since I had a hard time building the nogil version from the source in my MacBook, I used GitHub's Action with Docker image to produce the result.
@@ -113,20 +119,19 @@ In general, from the result breakdown,
 - nogil version performs better in I/O related benchmark, e.g. `tornado_http`, `logging_*`
 - nogil performs worse in mathematical computation, e.g. `scimark_sparse_mat_mult`, `telco`
 
-The results address getting rid of GIL indeed improves I/O performance, but on the mathematical computation, I doubt biased reference counting and global free-lists overrides the benefit of running without GIL. The full result can be found in the task `Compare result` in the docker [run](https://github.com/gavincyi/python-nogil-benchmark/actions/runs/3115286646). 
-
+The results address getting rid of GIL indeed improves I/O performance, but on the mathematical computation, I doubt biased reference counting overrides the benefit of running without GIL. The full result can be found in the task `Compare result` in the docker [run](https://github.com/gavincyi/python-nogil-benchmark/actions/runs/3115286646). 
 
 In summary, from the benchmark of the proof-of-concept implementation, it opens up both the potential and questions to the project. Will running production applications, like web server / client, give an excellent result without gil?
 
 ## 2. Does it support most Python packages?
 
-### Yes, but not entirely.
+### Answer: Yes, but not entirely.
 
 TL;DR Most libraries are installable in nogil Python, but not for those requiring extension compilation, especially those written with C / C++ extension.
 
 I experienced the following cases when installing packages for benchmark
 
-- When the nogil build wheel can't be found, it needs to download the universe wheel (py2.py3-none-any) and build / compile from scratch. In general, it takes a much longer time to install the packages and their dependence.
+- When the nogil build wheel can't be found, it needs to download the universe wheel (py2.py3-none-any) and build / compile from scratch. In general, it takes much longer time to install the packages and their dependence.
 
 - Sometimes the compilation involves other compilers, for instance, Rust compilers, in universal wheel. Without installing the necessary dev libraries in your machine / container, installing those packages will hit the wall. 
 
@@ -136,13 +141,13 @@ I experienced the following cases when installing packages for benchmark
 
 ## 3. Can it be deployed to run production applications now?
 
-### Yes but I don't see much benefit in performance. 
+### Answer: Yes, but I don't see much benefit in performance. 
 
 Now his work can definitely be built from source. You can also get its Python 3.9.10 diverged version from pyenv or docker. I [use](https://github.com/gavincyi/python-nogil-benchmark/blob/main/Dockerfile_nogil) the docker image to run the benchmark test cases.
 
 Regarding the pyperformance benchmark result, I am driven to test on the real world applications, especially the I/O intensive or web service applications, to examine how well the preliminary nogil Python performs.
 
-#### Cryptofeed
+### Cryptofeed
 
 The first target is on a websocket client. I tested running [cryptofeed](https://github.com/bmoscon/cryptofeed), a crypto exchange data feed handler. one of my favourite crypto projects in Github. It is an amazing project to illustrate how an enterprise level of feed handler should be developed. Though the project is written in Python, rather than conventional languages like C / C++ for a performance sensitive application, it leverages on [uvloop](https://github.com/MagicStack/uvloop) for asynio event loop. 
 
@@ -177,7 +182,7 @@ Median: 891
 
 I am staggered that the GIL version (around 120 us in median) runs 4x faster than the no-GIL version (around 890 us in median). 
 
-#### Flask
+### Flask
 
 Then I moved on to a standard web client Flask. The main reason I test on Flask is its plain implementation and thin layer of asyncio components. I understand that its performance is far beyond the current market standard and most Python web service applications have migrated to modern frameworks, for example, fastapi. However, if the development team still sticks on Flask framework, it likely means the team has no resources to move forward, and pray a trivial infrastructure upgrade can still keep the legacy applications in the game. 
 
@@ -234,7 +239,7 @@ In running production web applications, the current PoC nogil version does not s
 
 I appreciate Sam Gross' work and courage to tackle the nogil problem. It is a decade long problem in Python and most believe the endeavour would only be in vain. Part of his work discovered more optimal paths in CPython, has already been merged in main branch and now proves a runtime improvement in Python 3.11. His approach shows his ambition to beat the current CPython performance. Not only does he provide a design to declare the feasibility in nogil approach, but more importantly he is keen to reduce the object readability overhead in thread-safe implementation. No matter his design will be successfully upstreamed into core CPython, his work is a critical milestone in Python. 
 
-Finally, I highly recommend to walk through his detailed [write-up](https://docs.google.com/document/d/18CXhDb1ygxg-YXNBJNzfzZsDFosB5e6BfnXLlejd9l0/edit) to learn his considerations and rationales in choosing the right bolts and nuts. Also Łukasz Langa posted a great [wrap-up](https://lukasz.langa.pl/5d044f91-49c1-4170-aed1-62b6763e6ad0/) in October 2021 in details of conversation between Sam Gross and the core development team. I bet you'd appreciate Sam Gross' work more after reading them.
+Finally, I highly recommend walking through his detailed [write-up](https://docs.google.com/document/d/18CXhDb1ygxg-YXNBJNzfzZsDFosB5e6BfnXLlejd9l0/edit) to understand his considerations and rationales in choosing the right bolts and nuts. Also Łukasz Langa posted a great [wrap-up](https://lukasz.langa.pl/5d044f91-49c1-4170-aed1-62b6763e6ad0/) in October 2021 in details of conversation between Sam Gross and the core development team. I bet you'd appreciate Sam Gross' work more after reading them.
 
 ## Reference
 
@@ -247,5 +252,7 @@ Finally, I highly recommend to walk through his detailed [write-up](https://docs
 [Source code colesbury/nogil](https://github.com/gavincyi/python-nogil-benchmark)
 
 [Source code gavincyi/python-nogil-benchmark ](https://github.com/gavincyi/python-nogil-benchmark)
+
+
 
 
