@@ -2,7 +2,6 @@
 layout: post
 title: Does Sam Gross nogil CPython fork perform faster?
 subtitle: How far is it now to get rid of GIL in the future Python?
-cover-img: https://user-images.githubusercontent.com/10500805/193585218-46974681-92b6-4558-8028-85adecfaf426.png
 tags: [python, nogil, engineering]
 comments: true
 ---
@@ -157,7 +156,6 @@ The following benchmark measures the processing time in cryptofeed (from receipt
 
 ##### GIL Python 3.9.10 runtime
 ```
-gil
 Runtime summary    
 =======================
 Number: 200
@@ -170,7 +168,6 @@ Median: 119
 ##### no-GIL Python 3.9.10 runtime
 
 ```
-no-gil
 Runtime summary    
 =======================
 Number: 212
@@ -190,8 +187,6 @@ Again the benchmark was run in docker images. The testing [application](https://
 
 ##### GIL Python 3.9.10 runtime
 ```
-gil
-
 wrk --duration 30s --threads 10 --connections 300 http://127.0.0.1:8000/ping
 Running 30s test @ http://127.0.0.1:8000/ping
   10 threads and 300 connections
@@ -206,8 +201,6 @@ Transfer/sec:     94.03KB
 
 ##### no-GIL Python 3.9.10 runtime
 ```
-nogil
-
 wrk --duration 30s --threads 10 --connections 300 http://127.0.0.1:8000/ping
 Running 30s test @ http://127.0.0.1:8000/ping
   10 threads and 300 connections
