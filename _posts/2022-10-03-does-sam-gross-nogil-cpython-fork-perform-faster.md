@@ -7,8 +7,6 @@ tags: [python, nogil, engineering]
 comments: true
 ---
 
-## Background
-
 GIL (Global Interpreter Lock) is a mechanism in CPython to synchronise the Python bytecode execution to run only in a single thread at a time. It constitutes a straightforward CPython implementation but becomes obstacles of parallelism in Python. Retrospective [endeavour](https://www.backblaze.com/blog/the-python-gil-past-present-and-future/) in removing GIL did not reward well. Most of the time the workaround options are multiprocessing, an expensive fork with an opaque copy-to-write mechanism, and C / C++ extension, e.g. Cython.
 
 ## Sam Gross's nogil proposal
