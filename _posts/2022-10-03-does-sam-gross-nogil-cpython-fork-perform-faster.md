@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Does Sam Gross nogil CPython fork perform faster?
+subtitle: How far is it now to get rid of GIL in the future Python?
+cover-img: https://user-images.githubusercontent.com/10500805/193585218-46974681-92b6-4558-8028-85adecfaf426.png
 tags: [python, nogil, engineering]
 comments: true
 ---
