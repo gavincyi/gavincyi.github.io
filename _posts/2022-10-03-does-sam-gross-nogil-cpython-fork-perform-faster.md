@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Nogil benchmark
-subtitle: Does Sam Gross's nogil CPython implementation perform faster?
+subtitle: Does Sam Gross nogil CPython fork perform faster?
 tags: [python, nogil, engineering]
 comments: true
 ---
