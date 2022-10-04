@@ -154,8 +154,8 @@ footer-hover-col: "#0085A1"
 #  - "/assets/css/custom-styles.css"
 
 # If you have common JavaScript files that should be included in every page, list them here
-#site-js:
-#  - "/assets/js/custom-script.js"
+# site-js:
+#   - "/assets/js/MathJax.js"
 
 #################################
 # --- Web Analytics Section --- #
@@ -268,6 +268,7 @@ defaults:
       layout: "post"
       comments: true  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
+      ext-js: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"
   -
     scope:
       path: "" # any file that's not a post will be a "page" layout by default
