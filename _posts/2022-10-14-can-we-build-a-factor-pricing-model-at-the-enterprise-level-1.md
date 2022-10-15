@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Can we build a factor pricing model at the enterprise level?
-subtitle: How far is it now to get rid of GIL in the future Python?
 cover-img: https://user-images.githubusercontent.com/10500805/195588121-e4ab2d01-548e-49ea-b946-c236d2818947.png
 tags: [factormodel, riskmodel, portfoliomanagement, finance]
 comments: true
