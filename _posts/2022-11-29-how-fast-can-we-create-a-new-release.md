@@ -131,6 +131,8 @@ semantic-release publish --major|minor|patch
 
 whenever I feel necessary. Now it is turned into a GIthub Action in a simple one-click.
 
+<img width="1093" alt="image" src="https://user-images.githubusercontent.com/10500805/208200897-0a464a37-3779-4c67-b800-863855e1e493.png">
+
 ## Conclusion
 
 I recalled when I actively worked on Python open source projects 6 years ago, Makefile and Travis CI were major players in the open source development cycle. It is amazing to see the community evolve from twine, then poetry, and now to semantic-release. All these improvements lead to a more efficient open source development, and also save lots of developers' (like me) time. 
