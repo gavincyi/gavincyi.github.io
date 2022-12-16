@@ -2,6 +2,7 @@
 layout: post
 title: How fast can we create a new release?
 subtitle: My journey in poetry, conventional commit and semantic release
+cover-img: https://user-images.githubusercontent.com/10500805/208201045-35554899-a388-42c7-8b22-8467504cff89.png
 tags: [python, semver, devops, engineering, poetry, conventionalcommit, semanticrelease]
 comments: true
 ---
