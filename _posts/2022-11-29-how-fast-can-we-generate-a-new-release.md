@@ -7,7 +7,10 @@ tags: [python, semver, devops, engineering, poetry, conventionalcommit, semantic
 comments: true
 ---
 
-I have been living in my comfortable world as a midlife Python developer for a while, and my tendency of using my current set of tools is invincible to advance. Working in open source projects, it may mean to sacrifice one's personal time to transform amazing ideas into implementations. Down the road of development, tedious and routine works are definitely involved. Even though the developer attempts to minimise the effort involved to present the world his idea, still a colossal amount of chores, e.g. documentation, building distributions, and releases, are demanded as the "least common factors" in a project development.
+Working in open source projects is fun, but it may also mean to sacrifice one's personal time to transform amazing ideas into implementations. Down the road of development, tedious and routine works are definitely involved. A colossal amount of chores, e.g. documentation, building distributions, and releases, are demanded to keep the project open for contributions.
+
+In the meantime, I have been tired of performing all the routine steps whenever I pronounce "Hey world I have something new for you". Increasing the granularity in distribution actually penalises my personal time. My question is, "How fast can we generate a new release"?
+
 
 ## Distribute Python package
 
@@ -25,13 +28,13 @@ In the open source world, with Github, the above steps is translated as
 
 In the old days, the above steps mean to me
 
-1. Use git flow to create release tags, wrap up all the important feature and fix changes in the tag commit message and remember to `git push --tags` always
+1. Use git flow to create release tags
 2. Use twine to publish packages to PyPI and manually create releases in Github
 3. Before releasing tags, carefully select the features and fix changes into the changelog
 
-On step 2, I always grumbled about why to create the same release wheels in both Github and PyPI. On step 3, I know most (good) developers keep in mind to update the changelog in each commit, but I can't keep up the routine in my open source projects. I have been tired of performing all the routine steps whenever I pronounce "Hey world I have something new for you". Increasing the granularity in distribution actually penalises my personal time.
+On step 1, I have to wrap up all the important features and hotfixes in the tag commit message and remember to `git push --tags` always. On step 2, I always grumbled about the duplicated effort to release the same wheels in both Github and PyPI. On step 3, I know most (good) developers keep in mind to update the changelog in each commit, but I can't keep up the routine in my open source projects. 
 
-I am going to walk through my journey of employing poetry, conventional-commit and semantic-release to minimise the package distribution effort. 
+I am going to walk through my journey of employing poetry, conventional-commit and semantic-release to minimise the package distribution effort, and explain how they can make the distribution procedures lightning fast.
 
 ## Poetry
 
