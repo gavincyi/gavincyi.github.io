@@ -7,7 +7,7 @@ tags: [python, semver, devops, engineering, poetry, conventionalcommit, semantic
 comments: true
 ---
 
-Working in open source projects is fun, but it may also mean to sacrifice one's personal time to transform amazing ideas into implementations. Down the road of development, tedious and routine works are definitely involved. A colossal amount of chores, e.g. documentation, building distributions, and releases, are demanded to keep the project active and also open for contributions.
+Working in open source projects is fun, but it may also mean to sacrifice one's personal time to transform amazing ideas into applications. Down the road of development, tedious and routine works are definitely involved. A colossal amount of chores, e.g. documentation, building distributions, and releases, are demanded to keep the project active and also open for contributions.
 
 In the meantime, I have been tired of performing all the routine steps whenever I pronounce "Hey world I have something new for you". Increasing the granularity in distribution actually penalises my personal time. My question is, "How fast can we generate a new release"?
 
