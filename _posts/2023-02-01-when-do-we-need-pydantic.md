@@ -213,6 +213,6 @@ Also, you can sort out a slightly better version of dataclass with a third party
 
 Let me summarise it in a "simple" decision tree.
 
-
+![image](https://user-images.githubusercontent.com/10500805/216163327-5920c869-ae08-41a1-b615-619482f1826f.png)
 
 Hope it helps you choose between them.
