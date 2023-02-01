@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: When do we need Pydantic?
@@ -7,9 +6,6 @@ cover-img: https://i.pinimg.com/564x/ea/f1/5c/eaf15ca2b1c8a5fa76b95b5ff372a1a1.j
 tags: [python, dataclass, pydantic]
 comments: true
 ---
-
-
-When do we need Pydantic?
 
 Data class was introduced to Python 3.7 ([PEP 557](https://peps.python.org/pep-0557/)) to describe a data object with typed attributes.
 
