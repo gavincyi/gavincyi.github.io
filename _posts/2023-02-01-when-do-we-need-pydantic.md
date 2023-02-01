@@ -35,7 +35,7 @@ Type declaration in attributes suggests hints to users and developers, but has n
 
 ## Inheritance could be headache
 
-If you are going to introduce inheritance in data models, it could be a headache in dataclasses.
+If you are going to introduce inheritance in data models, it could be a headache with dataclasses.
 
 For example, the base model `Order` contains an optional attribute `active`, and the attribute is defaulted as `True`.
 
