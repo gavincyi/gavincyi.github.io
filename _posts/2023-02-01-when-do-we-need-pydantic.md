@@ -179,17 +179,18 @@ If your upstream already secures the data type of the data input, is enforcing v
 
 ## Do you really need Pydantic?
 
-I assume there are more considerations, and also a few alternative options, to choose between them.
+Yes, Pydantic is so great and powerful. It will definitely a game changer to enforce typing, if it is not yet. However, I assume there are more considerations, and also a few alternative options, to choose between them.
 
 For these considerations, a few primary and fundamental characteristics impact hugely. For example, I always prefer sticking with standard libraries in enterprise level development, as I have little interest in understanding how an application breaks down due to an arbitrary low level dependency upgrade. If possible, I would stick to dataclasses and then wrap it with custom validators. In the meantime, I have better control on the release and deployment of my open sourced applications, and I do not bother to provide any compatibility to legacy Python releases, e.g. Python 3.6. In such a case, I am happy to rely on Pydantic even if it does not serve the greatest scope of audiences, but sufficient majority.
 
 At the moment, let me summarise the major features / differences between dataclasses and Pydantic, especially for those readers who are making a decision on choosing one of them as the model framework.
 
 Standard library: No dependency needed for standard library dataclasses. A big win.
-Supported version
-Painful inheritance: Immune in Pydantic
-Type validation: Rigidly enforced in Pydantic
+Supported version: Same (Python 3.7+)
+Painless inheritance: Immune in Pydantic, otherwise stick in Python 3.10+ in dataclass
+Type validation: Rigidly enforced in Pydantic, but customisable 
 Class decorator: dataclass is applied with decorator, but Pydantic with `BaseModel` inheritance
+Private attribute: When you have non-primiative type of attributes, e.g. numpy array.
 
 A short table can be summarised as below
 
