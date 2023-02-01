@@ -37,7 +37,7 @@ Type declaration in attributes suggests hints to users and developers, but has n
 
 If you are going to introduce inheritance in data models, it could be a headache with dataclasses.
 
-For example, the base model `Order` contains an optional attribute `active`, and the attribute is defaulted as `True`.
+For example, the base model `Order` contains an optional attribute `active` which is defaulted as `True`.
 
 ```
 @dataclass
@@ -61,14 +61,14 @@ class StopOrder(Order):
   stop_price: float
 ```
 
-You will fail to construct the class with an error `TypeError: non-default argument 'stop_price' follows default argument` if you use Python 3.9 or below. The short answer is Python attempted to construct a constructor `__init__` that a default argument is between the non-default arguments, like below.
+You will fail to construct the class with an error `TypeError: non-default argument 'stop_price' follows default argument` in Python 3.9 or below. The short answer is Python attempted to construct a constructor `__init__` that a default argument is between the non-default arguments, like below.
 
 ```
 def __init__(self, price: float, quantity: int, active: bool = True, stop_price: float):
     …
 ```
 
-The above issue was then resolved in Python 3.10+, but it means dataclass is not well-defined until later versions.
+The above issue was then [resolved](https://www.trueblade.com/blogs/news/python-3-10-new-dataclass-features) in Python 3.10+, but it means dataclass is not well-defined until later versions.
 
 ## Pydantic
 
@@ -94,7 +94,7 @@ order.quantity
 Order(price=100.0, quantity=‘Peter’, active=True)
 ```
 
-The object model guarantees the object is validated before passing to downstream. A huge improvement for users and developers.
+The object model guarantees the object is validated before passing to downstream. A huge improvement for users and developers. Also Pydantic is immune from the inheritance pain mentioned above.
 
 ## Model conversion
 
@@ -199,9 +199,10 @@ A short table can be summarised as below
 |Supported version|Python 3.7+|Python 3.7+|
 |Painless inheritance|Python 3.10+|Python 3.7+|
 |Type validation|N|Y|
+|Class decorator|Y|N|
 |Dump to / load from dict|Y|Y|
 |Dump to / load from arbitrary class|N|Y|
-|Class decorator|Y|N|
+|Private attribute|N|Y|
 
 Also, you can sort out a slightly better version of dataclass with a third party library [attr](https://www.attrs.org/en/stable/index.html), and Tin [detailed](https://threeofwands.com/why-i-use-attrs-instead-of-pydantic/) greatly why attr is sometimes more preferable than Pydantic.
 
@@ -211,4 +212,4 @@ Let me summarise it in a "simple" decision tree.
 
 ![image](https://user-images.githubusercontent.com/10500805/216163327-5920c869-ae08-41a1-b615-619482f1826f.png)
 
-Hope it helps you choose between them.
+How does that sound?
