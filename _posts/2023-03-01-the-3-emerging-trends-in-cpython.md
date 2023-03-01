@@ -9,7 +9,7 @@ tags: [python, cpython]
 comments: true
 ---
 
-Since its first appearance 30 years ago, Python has evolved into a widely adapted language. One of the greatest contributors to its success is CPython governance - its committee reacts swiftly to community requests. Great feature enhancements can be rapidly released in the next version of CPython. (Of course CPython has a speedy schedule to release new versions and deprecate legacy versions at the same time). In 2023, I feel there are 3 emerging trends in CPython worth mentioning, and I believe they are critical for the Python ecosystem competing (and interacting) with other emerging programming languages. 
+Since its first appearance 30 years ago, Python has evolved into a widely adapted language. One of the greatest contributors to its success is CPython governance - its committee reacts swiftly to community requests. Great feature enhancements can be rapidly released in the next version of CPython. (Of course CPython has a speedy schedule to release new versions and deprecate legacy versions at the same time). In 2023, I feel there are 3 emerging trends in CPython worth mentioning, and I believe they are critical for the Python ecosystem competing (and interacting) with other fast-growing programming languages. 
 
 ## Fading out setup.py (PEP-621)
 
