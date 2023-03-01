@@ -2,7 +2,7 @@
 layout: post
 title: The 3 emerging trends in CPython
 subtitle: Which proposals should Python developers keep an eye on in 2023?
-cover-img: https://user-images.githubusercontent.com/10500805/222268502-51f6099d-801a-45aa-8bc6-77eb3e840118.png
+cover-img: https://user-images.githubusercontent.com/10500805/222268872-7d436228-253c-42b1-8856-80216f10f1b3.png
 
 
 tags: [python, cpython]
