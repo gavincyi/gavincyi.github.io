@@ -31,8 +31,7 @@ In the model hub, I can easily grab a text processing model by topics or languag
 
 Take another example. I searched for an ESG model in the hub and found a categorization model on ESG topics
 
-
-
+![unknown](https://user-images.githubusercontent.com/10500805/234402585-cf55e701-8198-4fe4-86d3-cb8c8a12db56.png)
 
 
 Then I pulled it into my local environment
@@ -86,13 +85,14 @@ pd.concat({
 }, axis=1)
 ```
 
+![unknown](https://user-images.githubusercontent.com/10500805/234402902-c784c458-27b7-4125-89b3-a38c6e474ce3.png)
 
 
 Coincidently, the result aligns well with the running Refinitiv ESG [scores](https://www.refinitiv.com/en/sustainable-finance/esg-scores). For example, Ford has the highest climate change score while Microsoft has the highest ESG score overall.
 
 |MSFT|NVDA|F|
-|:---:|:---:|
-||||
+|:---:|:---:|:---:|
+|![Microsoft Corp ESG](https://user-images.githubusercontent.com/10500805/234403081-f13ba571-bd16-492a-b247-93b2f2267dc6.png)|![unknown](https://user-images.githubusercontent.com/10500805/234403159-c918db11-771d-4390-a8fd-c3a0aba7f662.png)|![unknown](https://user-images.githubusercontent.com/10500805/234403200-8f2b5c4c-8a25-44bb-be77-47a7ed4b713b.png)|
 
 It sounds like an open source pre-trained model may be capable of producing a similar result as the provider's millions-dollar-subscription-required data. I believe so but I haven't run analysis yet on the entire universe.
 
@@ -161,10 +161,11 @@ The above code snippet updates the model repository with TF model file `tf_model
 
 Last but not least, the model card format is well defined. For example, licence and datasets can be selected from the autocomplete list. 
 
+![unknown](https://user-images.githubusercontent.com/10500805/234403332-53e00256-fb17-4cf0-9245-d42d66d0a3de.png)
 
 `README.md` is provided with a template to fill in the detailed descriptions and helps the interactions between authors and users in respect of the sufficient documentation.
 
-
+![unknown](https://user-images.githubusercontent.com/10500805/234403384-3a04aa74-4afd-4fe6-a6d5-c8efeed1397f.png)
 
 
 ##### *Do not worry about setting up boundaries for user experience. Sometimes we need to help them define it well*
@@ -175,8 +176,13 @@ In March, Hugging Face blog published a [post](https://huggingface.co/blog/using
 
 Primarily, survivors posted screenshots of texts with their addresses and what they needed (including rescue) on social media, and Hugging Face team built an app to recognize text with open source OCR tools, tokenize texts with [bert-base-turkish-cased](https://huggingface.co/dbmdz/bert-base-turkish-cased) and call a customized model to extract addresses.
 
-They created a volunteer contribution organisation ["deprem-ml"](https://huggingface.co/deprem-ml) and posted a [leaderboard](https://huggingface.co/spaces/deprem-ml/intent-leaderboard) to find out the best turkish BERT text classification. Later, they extended their model so that it could be evaluated and crowd-sourced through a labeling interface.
+Primarily, survivors posted screenshots of texts with their addresses and what they needed (including rescue) on social media, and Hugging Face team built an app to recognize text with open source OCR tools, tokenize texts with [bert-base-turkish-cased](https://huggingface.co/dbmdz/bert-base-turkish-cased) and call a customized model to extract addresses.
 
+![unknown](https://user-images.githubusercontent.com/10500805/234403460-77b558cd-3b54-4bd4-92a8-afc21ac13a43.png)
+
+They created a volunteer contribution organisation ["deprem-ml"](https://huggingface.co/deprem-ml) and posted a [leaderboard](https://huggingface.co/spaces/deprem-ml/intent-leaderboard) to find out the best turkish BERT text classification. Later, they extended their model so that it could be evaluated and crowd-sourced through a labelling interface.
+
+![unknown](https://user-images.githubusercontent.com/10500805/234403609-aa44dba4-03c6-4dc0-a410-933dc1301fb4.png)
 
 
 ## Open AI framework
