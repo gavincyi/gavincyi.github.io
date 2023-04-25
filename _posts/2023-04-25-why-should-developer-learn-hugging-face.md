@@ -27,6 +27,8 @@ For starters, text preprocessing and reusing the pretrained model could fall int
 
 ## Model hub
 
+##### *If you want to attract users, your product should be solving a millions dollar problem. At least it should sound like it is.*
+
 In the model hub, I can easily grab a text processing model by topics or languages, and use it in my local environment. For example, I can find a whisper Cantonese recognition [model](https://huggingface.co/alvanlii/whisper-small-cantonese) in the hub. 
 
 Take another example. I searched for an ESG model in the hub and found a categorization model on ESG topics
@@ -96,9 +98,10 @@ Coincidently, the result aligns well with the running Refinitiv ESG [scores](htt
 
 It sounds like an open source pre-trained model may be capable of producing a similar result as the provider's millions-dollar-subscription-required data. I believe so but I haven't run analysis yet on the entire universe.
 
-##### *If you want to attract users, your product should be solving a millions dollar problem. At least it should sound like it is.*
 
 ## Pre-trained model not an end
+
+##### *If you want your platform to grow exponentially, allow users to contribute back.*
 
 Tokenizers and pre-trained models can be further trained and reiterated as new ones. It means models on the hub could be represented as "ancestor trees". 
 
@@ -121,9 +124,10 @@ trainer.train()
 
 Pre-trained and open source tokenizers and models is not a new concept. Tensorflow has provided APIs to retrieve academic level trained models. But Hugging Face now provides a loop for every data scientist, even amateurs, to contribute back into the platform. We have Github for open source projects but it doesn't provide a bespoken framework for data scientists to socialise their trained models. In the next section, we will go through how Hugging Face creates an amazing framework for sharing models.
 
-##### *If you want your platform to grow exponentially, allow users to contribute back.*
 
 ## Boundary is good
+
+##### *Do not worry about setting up boundaries for user experience. Sometimes we need to help them define it well*
 
 Hugging Face provides a standard framework to share models in the hub. The flow is generally as follows
 
@@ -167,8 +171,6 @@ Last but not least, the model card format is well defined. For example, licence 
 
 ![unknown](https://user-images.githubusercontent.com/10500805/234403384-3a04aa74-4afd-4fe6-a6d5-c8efeed1397f.png)
 
-
-##### *Do not worry about setting up boundaries for user experience. Sometimes we need to help them define it well*
 
 ## Collaboration to save lives
 
