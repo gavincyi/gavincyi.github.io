@@ -92,7 +92,7 @@ Coincidently, the result aligns well with the running Refinitiv ESG [scores](htt
 
 |MSFT|NVDA|F|
 |:---:|:---:|:---:|
-|![Microsoft Corp ESG](https://user-images.githubusercontent.com/10500805/234403081-f13ba571-bd16-492a-b247-93b2f2267dc6.png)|![unknown](https://user-images.githubusercontent.com/10500805/234403159-c918db11-771d-4390-a8fd-c3a0aba7f662.png)|![unknown](https://user-images.githubusercontent.com/10500805/234403200-8f2b5c4c-8a25-44bb-be77-47a7ed4b713b.png)|
+|<img width="290" alt="Pasted Graphic" src="https://user-images.githubusercontent.com/10500805/234404176-7b64b9fb-6c11-46cd-8f89-b2f59ab1621f.png">|!<img width="290" alt="image" src="https://user-images.githubusercontent.com/10500805/234404275-ab97bd81-69c6-458f-b219-4aff99055994.png">|<img width="290" alt="image" src="https://user-images.githubusercontent.com/10500805/234404390-cb982cca-7c1e-4f76-ad56-622c918be3b4.png">|
 
 It sounds like an open source pre-trained model may be capable of producing a similar result as the provider's millions-dollar-subscription-required data. I believe so but I haven't run analysis yet on the entire universe.
 
