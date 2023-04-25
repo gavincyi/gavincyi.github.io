@@ -27,7 +27,7 @@ For starters, text preprocessing and reusing the pretrained model could fall int
 
 ## Model hub
 
-##### *If you want to attract users, your product should be solving a millions dollar problem. At least it sounds like it is.*
+##### *If you want to attract users, your product should be solving a million dollar problem. At least it sounds like it is.*
 
 In the model hub, I can easily grab a text processing model by topics or languages, and use it in my local environment. For example, I can find a whisper Cantonese recognition [model](https://huggingface.co/alvanlii/whisper-small-cantonese) in the hub. 
 
