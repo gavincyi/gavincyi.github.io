@@ -196,6 +196,9 @@ I truly believe the platform has a huge potential to grow, and its operation mod
 ### Reference
 
 [Using Machine Learning to Aid Survivors and Race through Time](https://huggingface.co/blog/using-ml-for-disasters)
+
 [Fine-tune a pretrained model](https://huggingface.co/docs/transformers/training)
+
 [Share a model](https://huggingface.co/docs/transformers/model_sharing)
+
 [Colab Notebook - Hugging Face Share Model](https://colab.research.google.com/drive/1sGbPW-fdStydez2K3l5vWDuDPNUvXxgP?usp=sharing)
