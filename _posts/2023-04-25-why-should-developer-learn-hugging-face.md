@@ -178,8 +178,6 @@ In March, Hugging Face blog published a [post](https://huggingface.co/blog/using
 
 Primarily, survivors posted screenshots of texts with their addresses and what they needed (including rescue) on social media, and Hugging Face team built an app to recognize text with open source OCR tools, tokenize texts with [bert-base-turkish-cased](https://huggingface.co/dbmdz/bert-base-turkish-cased) and call a customized model to extract addresses.
 
-Primarily, survivors posted screenshots of texts with their addresses and what they needed (including rescue) on social media, and Hugging Face team built an app to recognize text with open source OCR tools, tokenize texts with [bert-base-turkish-cased](https://huggingface.co/dbmdz/bert-base-turkish-cased) and call a customized model to extract addresses.
-
 ![unknown](https://user-images.githubusercontent.com/10500805/234403460-77b558cd-3b54-4bd4-92a8-afc21ac13a43.png)
 
 They created a volunteer contribution organisation ["deprem-ml"](https://huggingface.co/deprem-ml) and posted a [leaderboard](https://huggingface.co/spaces/deprem-ml/intent-leaderboard) to find out the best turkish BERT text classification. Later, they extended their model so that it could be evaluated and crowd-sourced through a labelling interface.
