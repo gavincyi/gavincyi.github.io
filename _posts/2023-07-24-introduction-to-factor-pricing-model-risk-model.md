@@ -185,6 +185,9 @@ The following types of covariances are compared
 
 The observed results are as follows:
 
+![XKL8YfM-9AOmI-HoT9_1k84Q_DjmtOfzNNNA7AEer3k_l4sPSnQqpMp9puqzvO54c_L-ZHDds--Lwl28qycyoe-rC09joGFWAMP2U3qUbv0I21mJ6coFmZZ_P71Q](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/ba4b003e-d673-4a77-8f93-36384de7bc6e)
+
+![Dv3NpGwyL-nrjsCH7msCZIzqh36MNTtOMPiJ_GNaWeHJK0iVXjx_SAc24-LHES3it4OhjIbw1ZJ7S6EIZ85eeK0Onhe0ylQK2oj5SEu7L98DP7LSm5OsVxsBgDsM](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/46bd2696-5448-443b-99f9-239e6889f032)
 
 
 1. PCA is the stable benchmark for comparison
