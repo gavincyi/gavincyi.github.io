@@ -65,6 +65,9 @@ Both universes include instruments actively trading in the past 6 months and exc
 By carefully defining and managing these universes, the library ensures robust and accurate factor model construction and risk analysis.
 
 
+![estimation universe](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/d304dd1c-17b2-4d48-a4cb-b5bdcb408951)
+
+![model universe](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/6ecb1445-d611-48c8-a76d-d8c36c763dd0)
 
 
 Comparing the number of valid instruments in the two universes in cryptocurrency class, we can see the ratio between the estimation and model universe is around 10:1.
