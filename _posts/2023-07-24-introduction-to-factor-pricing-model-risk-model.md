@@ -29,11 +29,11 @@ In the following sections, I will walk you through how I approach these problems
 
 ## Data
 
-Building and benchmarking risk models heavily relies on high-quality market data. Unfortunately, obtaining such historical data, especially for equities, can be challenging and often requires costly subscriptions to data providers. To demonstrate the models and allow everyone to try them out in Colab notebooks, I have chosen cryptocurrency data as a starting point. It doesn't mean that I haven't tested the library with equity data – I indeed have and compared it with a risk model from a prominent vendor. However, using cryptocurrency data provides a more accessible playground for anyone to start experimenting without incurring significant costs.
+Building and benchmarking risk models heavily relies on high-quality market data. Unfortunately, obtaining such historical data, especially for equities, can be challenging and often requires costly subscriptions to data providers. To demonstrate the models and allow everyone to try them out in Colab notebooks, I have chosen cryptocurrency data as a starting point. It doesn't mean that I haven't tested the library with equity data – I indeed have and compared it with a risk model from a prominent vendor. However, using cryptocurrency data provides a more [accessible](https://www.kaggle.com/datasets?search=crypto) playground for anyone to start experimenting without incurring significant costs.
 
 ## Statistical model
 
-In developing the `factor-pricing-model-risk-model` library, I decided to focus on statistical models as the starting point. Unlike fundamental models, which can be challenging to define factors beyond obvious ones like momentum, statistical models, such as Principal Component Analysis (PCA), offer a more straightforward approach and also serve as a natural benchmark for other statistical models.
+In developing the `factor-pricing-model-risk-model` library, I decided to focus on statistical models as the starting point. Unlike fundamental models, which can be challenging to define factors beyond obvious ones like momentum, statistical models, such as [Principal Component Analysis (PCA)](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html), offer a more straightforward approach and also serve as a natural benchmark for other statistical models.
 
 
 ## Forecast accuracy
@@ -141,7 +141,7 @@ For instance, the pairwise correlation of BTC and ETH on 2023-04-30 is computed 
 
 However, for better covariance estimation, we can employ two techniques. Firstly, we can adjust the diagonal entries using alternative volatility estimation methods. For example, replacing the existing volatility estimation, derived from longer-term observations, with GARCH volatility estimation can better capture the volatility structure.
 
-The second technique involves "coverage shrinkage". Covariance estimation typically requires a large sample of data to converge towards the true population values. However, due to the curse of dimensionality, smaller observation sets often lead to noisy sample covariances and even noisier inverses. This phenomenon is especially common in financial data with extreme and potentially noisy returns. 
+The second technique involves ["coverage shrinkage"](https://www.pm-research.com/content/iijpormgmt/30/4/110). Covariance estimation typically requires a large sample of data to converge towards the true population values. However, due to the curse of dimensionality, smaller observation sets often lead to noisy sample covariances and even noisier inverses. This phenomenon is especially common in financial data with extreme and potentially noisy returns. 
 
 Coverage shrinkage is a powerful method to address this issue. By introducing a parameter \\\(\delta\\\), we can suppress the influence of off-diagonal elements in the covariance (or correlation) matrix, achieving a better signal-to-noise ratio. This technique yields more reliable results, particularly in scenarios with smaller datasets or when dealing with extreme and noisy financial data.
 
@@ -168,7 +168,7 @@ estimator.cov(volatility=garch_est)
 
 ## Result
 
-The results presented below are derived from the analysis conducted on the crypto universe dataset. The factor model is initially trained using statistical models with an estimation universe and subsequently transformed with the model universe. The covariances, both unadjusted and adjusted, are compared using accuracy estimators to evaluate their performance.
+The [results](https://github.com/factorpricingmodel/factor-pricing-model-risk-model#:~:text=Cryptocurrency%20Statistical%20Risk%20Model) presented below are derived from the analysis conducted on the crypto universe dataset. The factor model is initially trained using statistical models with an estimation universe and subsequently transformed with the model universe. The covariances, both unadjusted and adjusted, are compared using accuracy estimators to evaluate their performance.
 
 The following types of covariances are compared
 
