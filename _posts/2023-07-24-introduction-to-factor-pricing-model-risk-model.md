@@ -131,6 +131,8 @@ or the unadjusted correlation between two specified pairs (BTC v.s. ETH)
 rolling_risk_model.get("2023-04-30").corr().loc[["BTC_Bitcoin", "ETH_Ethereum"], ["BTC_Bitcoin", "ETH_Ethereum"]]
 ```
 
+For instance, the pairwise correlation of BTC and ETH on 2023-04-30 is computed as follows.
+
 |              |   BTC_Bitcoin |   ETH_Ethereum |
 |:-------------|--------------:|---------------:|
 | **BTC_Bitcoin**  |      1        |       0.892195 |
