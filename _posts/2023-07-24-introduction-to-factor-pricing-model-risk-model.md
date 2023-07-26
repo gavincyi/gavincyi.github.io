@@ -143,15 +143,15 @@ The second technique involves "coverage shrinkage". Covariance estimation typica
 
 Coverage shrinkage is a powerful method to address this issue. By introducing a parameter $\delta$, we can suppress the influence of off-diagonal elements in the covariance (or correlation) matrix, achieving a better signal-to-noise ratio. This technique yields more reliable results, particularly in scenarios with smaller datasets or when dealing with extreme and noisy financial data.
 
-The covariance shrinkage parameter $\delta$ can be specified during covariance estimator creation using the following formula:
+The covariance shrinkage parameter \\\(\delta\\\) can be specified during covariance estimator creation using the following formula:
 
 $$
 \hat{Q} = (1 - \delta) * Q + \delta * \mu * I
 $$
 
-Here, $\hat{Q}$ is the adjusted covariance matrix, $Q$ is the sample covariance matrix, $\mu$ is the mean variance, and $I$ is the identity matrix.
+Here, \\\(\hat{Q}\\\) is the adjusted covariance matrix, \\\(Q\\\) is the sample covariance matrix, \\\(\mu\\\) is the mean variance, and \\\(I\\\) is the identity matrix.
 
-creation. Additionally, volatility adjustments can be made using the cov method. For instance, to specify a constant shrinkage with $\delta$ equal to 0.2 and adjust the volatility using a GARCH estimation named garch_est, you can follow the specified procedure.
+creation. Additionally, volatility adjustments can be made using the cov method. For instance, to specify a constant shrinkage with \\\(\delta\\\) equal to 0.2 and adjust the volatility using a GARCH estimation named garch_est, you can follow the specified procedure.
 
 ```
 from fpm_risk_model import RollingCovarianceEstimator
@@ -195,3 +195,5 @@ In conclusion, as the factor-pricing-model-risk-model library is still in its be
 While the library is a work in progress, it is open to contributions and welcomes ideas from the community. As more features are added and improvements made, the goal is to provide users with a comprehensive and powerful tool for factor pricing models across various asset classes. Feedback, suggestions, and contributions from the community will play a crucial role in shaping the library's future and ensuring it becomes a valuable resource for researchers, institutional investors, and asset managers in their pursuit of sophisticated risk analysis and data-driven decision-making.
 
 All kinds of contributions and ideas from the community are welcomed, as we continue to refine the library. Please do not hesitate to drop me PMs or emails if you want to understand more about the library.
+
+
