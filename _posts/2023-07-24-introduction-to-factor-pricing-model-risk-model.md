@@ -153,7 +153,7 @@ $$
 
 Here, \\\(\hat{Q}\\\) is the adjusted covariance matrix, \\\(Q\\\) is the sample covariance matrix, \\\(\mu\\\) is the mean variance, and \\\(I\\\) is the identity matrix.
 
-creation. Additionally, volatility adjustments can be made using the cov method. For instance, to specify a constant shrinkage with \\\(\delta\\\) equal to 0.2 and adjust the volatility using a GARCH estimation named garch_est, you can follow the specified procedure.
+For instance, to specify a constant shrinkage with \\\(\delta\\\) equal to 0.2 and adjust the volatility using a GARCH estimation named garch_est, you can follow the specified procedure.
 
 ```
 from fpm_risk_model import RollingCovarianceEstimator
