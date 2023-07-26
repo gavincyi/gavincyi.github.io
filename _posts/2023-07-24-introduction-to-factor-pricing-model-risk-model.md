@@ -11,7 +11,7 @@ Since my previous [post](https://gavincyi.github.io/2022-10-14-can-we-build-a-fa
 
 ## pyportfolioopt
 
-One of the libraries I came across is [pyportfolioopt](https://github.com/robertmartin8/PyPortfolioOpt), an open-source creation by  [Robert Martin](https://github.com/robertmartin8) designed for portfolio optimization toolkits. The project stands out with its support for various essential portfolio optimization models and techniques, including the Markowitz optimizer and Black-Litterman allocation. While it also covers risk model generation from raw market data, it is currently limited to computing covariances from raw prices. I find the library to be among the top 3 open source libraries that closely resemble how institutional investors and asset managers manage their portfolio. However, there seems to be a missing piece in the risk model generation specifically related to factor models, and that's where my new library comes into play.
+Instead of starting from scratch, I initially explored existing open-source libraries to see if they provided the features I was seeking. One such library that caught my attention is [pyportfolioopt](https://github.com/robertmartin8/PyPortfolioOpt), an open-source creation by  [Robert Martin](https://github.com/robertmartin8) designed for portfolio optimization toolkits. The project stands out with its support for various essential portfolio optimization models and techniques, including the Markowitz optimizer and Black-Litterman allocation. While it also covers risk model generation from raw market data, it is currently limited to computing covariances from raw prices. I find the library to be among the top 3 open source libraries that closely resemble how institutional investors and asset managers manage their portfolio. However, there seems to be a missing piece in the risk model generation specifically related to factor models, and that's where my new library comes into play.
 
 ## qlib
 
@@ -64,7 +64,7 @@ Both universes include instruments actively trading in the past 6 months and exc
 
 By carefully defining and managing these universes, the library ensures robust and accurate factor model construction and risk analysis.
 
-The following graph illustrates the number of valid instruments in the estimation universe
+The following graphs illustrate the number of valid instruments in the estimation universe
 
 ![estimation universe](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/d304dd1c-17b2-4d48-a4cb-b5bdcb408951)
 
@@ -72,7 +72,7 @@ and that in the model universe.
 
 ![model universe](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/6ecb1445-d611-48c8-a76d-d8c36c763dd0)
 
-Comparing the number of valid instruments in the two universes in cryptocurrency class, we can see the ratio between the estimation and model universe is around 10:1.
+Comparing the number of valid instruments in the two universes in cryptocurrency class, we can see the ratio between the estimation and model universe is around 10:1. This ratio number aligns with the universes of equity factor models provided by professional vendors.
 
 ## Factor Model
 
