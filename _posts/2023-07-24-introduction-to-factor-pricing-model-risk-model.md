@@ -143,7 +143,7 @@ However, for better covariance estimation, we can employ two techniques. Firstly
 
 The second technique involves "coverage shrinkage". Covariance estimation typically requires a large sample of data to converge towards the true population values. However, due to the curse of dimensionality, smaller observation sets often lead to noisy sample covariances and even noisier inverses. This phenomenon is especially common in financial data with extreme and potentially noisy returns. 
 
-Coverage shrinkage is a powerful method to address this issue. By introducing a parameter $\delta$, we can suppress the influence of off-diagonal elements in the covariance (or correlation) matrix, achieving a better signal-to-noise ratio. This technique yields more reliable results, particularly in scenarios with smaller datasets or when dealing with extreme and noisy financial data.
+Coverage shrinkage is a powerful method to address this issue. By introducing a parameter \\\(\delta\\\), we can suppress the influence of off-diagonal elements in the covariance (or correlation) matrix, achieving a better signal-to-noise ratio. This technique yields more reliable results, particularly in scenarios with smaller datasets or when dealing with extreme and noisy financial data.
 
 The covariance shrinkage parameter \\\(\delta\\\) can be specified during covariance estimator creation using the following formula:
 
