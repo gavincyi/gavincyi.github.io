@@ -33,16 +33,16 @@ Building and benchmarking risk models heavily relies on high-quality market data
 
 ## Statistical model
 
-In developing the` factor-pricing-model-risk-model` library, I decided to focus on statistical models as the starting point. Unlike fundamental models, which can be challenging to define factors beyond obvious ones like momentum, statistical models, such as Principal Component Analysis (PCA), offer a more straightforward approach and also serve as a natural benchmark for other statistical models.
+In developing the `factor-pricing-model-risk-model` library, I decided to focus on statistical models as the starting point. Unlike fundamental models, which can be challenging to define factors beyond obvious ones like momentum, statistical models, such as Principal Component Analysis (PCA), offer a more straightforward approach and also serve as a natural benchmark for other statistical models.
 
 
 ## Forecast accuracy
 
 To evaluate the forecast accuracy of different models, we need appropriate metrics. For this purpose, I have incorporated two metrics: 
 
-1. *Bias test*: This metric assesses forecasting accuracy of volatility on a time series of observed portfolio returns.
+1. **Bias test**: This metric assesses forecasting accuracy of volatility on a time series of observed portfolio returns.
 
-2. *Value at risk (VaR)*: VaR is a risk metric that represents the maximum possible loss for a given holding horizon and specific level of confidence.
+2. **Value at risk (VaR)**: VaR is a risk metric that represents the maximum possible loss for a given holding horizon and specific level of confidence.
 
 These metrics provide valuable insights into how well the models can forecast in general.
 
@@ -56,19 +56,21 @@ Additionally, researchers often face the challenge of comparing various models w
 
 The concept of universes plays a pivotal role in the factor-pricing-model-risk-model library. Two types of universes are defined:
 
-1. *Estimation Universe*: This comprises the top market cap instruments in the market. It is used to construct factor returns.
+1. **Estimation Universe**: This comprises the top market cap instruments in the market. It is used to construct factor returns.
 
-2. *Model Universe*: This consists of instruments with sufficient trading liquidity, such as the top 50% based on average daily volume. The model universe derives its factor exposures and covariances from the computed factor returns.
+2. **Model Universe**: This consists of instruments with sufficient trading liquidity, such as the top 50% based on average daily volume. The model universe derives its factor exposures and covariances from the computed factor returns.
 
 Both universes include instruments actively trading in the past 6 months and exclude stablecoins and forked-like pairs (e.g., BTC vs. wrapped BTC). Similar to constructing equity universes, the process involves excluding ETFs and instruments listed on multiple exchanges.
 
 By carefully defining and managing these universes, the library ensures robust and accurate factor model construction and risk analysis.
 
+The following graph illustrates the number of valid instruments in the estimation universe
 
 ![estimation universe](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/d304dd1c-17b2-4d48-a4cb-b5bdcb408951)
 
-![model universe](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/6ecb1445-d611-48c8-a76d-d8c36c763dd0)
+and that in the model universe.
 
+![model universe](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/6ecb1445-d611-48c8-a76d-d8c36c763dd0)
 
 Comparing the number of valid instruments in the two universes in cryptocurrency class, we can see the ratio between the estimation and model universe is around 10:1.
 
@@ -78,23 +80,13 @@ With the defined universes and market data in place, we can now proceed to build
 
 To begin, we create a DataFrame to represent the estimation universe, capturing its validity within the date index and instrument information across columns.
 
-|index|algorand|apecoin|avalanche-2|axie-infinity|binance-usd|binancecoin|bitcoin|bitcoin-cash|cardano|chain-2|
-|---|---|---|---|---|---|---|---|---|---|---|
-|2022-09-01 00:00:00|true|false|true|true|false|true|true|true|false|false|
-|2022-09-02 00:00:00|true|false|true|true|false|true|true|true|false|false|
-|2022-09-03 00:00:00|true|false|true|true|false|true|true|true|false|false|
-|2022-09-04 00:00:00|false|false|true|true|false|true|true|true|false|false|
-|2022-09-05 00:00:00|false|false|true|true|false|true|true|true|true|false|
-|2022-09-06 00:00:00|false|false|true|true|false|true|true|true|true|false|
-|2022-09-07 00:00:00|false|false|true|true|false|true|true|true|false|false|
-|2022-09-08 00:00:00|false|false|true|true|false|true|true|true|false|false|
-|2022-09-09 00:00:00|false|false|true|true|false|true|true|true|false|false|
-|2022-09-10 00:00:00|false|false|true|true|false|true|true|true|false|false|
-|2022-09-11 00:00:00|false|false|true|true|false|true|true|true|false|false|
-|2022-09-12 00:00:00|false|false|true|true|false|true|true|true|false|false|
-|2022-09-13 00:00:00|true|true|true|true|false|true|true|true|false|false|
-|2022-09-14 00:00:00|false|true|true|true|false|true|true|true|false|false|
-|2022-09-15 00:00:00|false|true|true|true|false|true|true|true|false|false|
+|index|algorand|apecoin|avalanche-2|axie-infinity|binance-usd|
+|---|---|---|---|---|---|
+|2022-09-11 00:00:00|false|false|true|true|false|
+|2022-09-12 00:00:00|false|false|true|true|false|
+|2022-09-13 00:00:00|true|true|true|true|false|
+|2022-09-14 00:00:00|false|true|true|true|false|
+|2022-09-15 00:00:00|false|true|true|true|false|
 
 Next, we generate a risk model using statistical factors obtained through PCA, which serves as our benchmark. The parameter `n_components` is set to 0.9, indicating that we select the number of components needed to explain more than 90% of the total variance. This model operates on a rolling basis of 180 days, using daily returns from the estimation universe. To enhance stability, the daily returns are windorized by +/-20%.
 
@@ -141,8 +133,8 @@ rolling_risk_model.get("2023-04-30").corr().loc[["BTC_Bitcoin", "ETH_Ethereum"],
 
 |              |   BTC_Bitcoin |   ETH_Ethereum |
 |:-------------|--------------:|---------------:|
-| BTC_Bitcoin  |      1        |       0.892195 |
-| ETH_Ethereum |      0.892195 |       1        |
+| **BTC_Bitcoin**  |      1        |       0.892195 |
+| **ETH_Ethereum** |      0.892195 |       1        |
 
 
 However, for better covariance estimation, we can employ two techniques. Firstly, we can adjust the diagonal entries using alternative volatility estimation methods. For example, replacing the existing volatility estimation, derived from longer-term observations, with GARCH volatility estimation can better capture the volatility structure.
