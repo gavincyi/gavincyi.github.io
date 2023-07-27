@@ -198,5 +198,8 @@ While the library is a work in progress, it is open to contributions and welcome
 
 All kinds of contributions and ideas from the community are welcomed, as we continue to refine the library. Please do not hesitate to drop me PMs or emails if you want to understand more about the library.
 
-Library: [factor-pricing-model-risk-model](https://github.com/factorpricingmodel/factor-pricing-model-risk-model)
+[Library factor-pricing-model-risk-model](https://github.com/factorpricingmodel/factor-pricing-model-risk-model)
+
 [Crypto risk model example notebook](https://colab.research.google.com/github/factorpricingmodel/factor-pricing-model-risk-model/blob/main/examples/notebook/crypto_statistical_risk_model.ipynb)
+
+[Documentation](https://factor-pricing-model-risk-model.readthedocs.io/en/latest/index.html)
