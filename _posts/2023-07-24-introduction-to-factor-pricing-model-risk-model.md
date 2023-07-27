@@ -2,6 +2,7 @@
 layout: post
 title: Can we build a factor pricing model at the enterprise level? (2)
 subtitle: Unleashing the Power of Factor Pricing Models with Statistical Models
+cover-img: https://github.com/gavincyi/gavincyi.github.io/assets/10500805/6e6c51cd-8662-4b5b-9b7f-05b796de8425
 tags: [factormodel, riskmodel, portfoliomanagement, finance, quantdevelopment]
 comments: true
 ---
