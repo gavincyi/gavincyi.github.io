@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A FASTER NumPy Needed
+cover-img: https://github.com/gavincyi/gavincyi.github.io/assets/10500805/3389a394-c227-4bee-9479-080cc6873788
 tags: [numpy, quant, quantdev, finance, gpu, cython]
 comments: true
 ---
