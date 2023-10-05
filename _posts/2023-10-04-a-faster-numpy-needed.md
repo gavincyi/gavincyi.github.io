@@ -7,7 +7,7 @@ tags: [numpy, quant, quantdev, finance, gpu, cython]
 comments: true
 ---
 
-Quants always desire for faster computational performance. Is it feasible with a reasonable effort and limited cost?
+Quants always desire faster computational performance. Is it feasible with a reasonable effort and limited cost?
 
 Prior to the [post](https://gavincyi.github.io/2022-08-27-python-compiler-comparsion-2/) about Python compiler, we have explored Python computation acceleration with compiler libraries, e.g. Numba. The comparison might be a good start for greenfield projects, but it does not sound relevant to those large-scale quantitative libraries. These libraries may have been launched at a time when only NumPy was available as a reliable numerical library, and then scaled up to be used by existing services for a couple of years. Rewriting the whole core computational parts in those libraries is neither economical nor pragmatic. Developers might ask: What are the possible approaches for the NumPy part? What considerations should they have?
 
