@@ -2,7 +2,7 @@
 layout: post
 title: A FASTER NumPy Needed
 subtitle: How much can we still speed up on NumPy?
-cover-img: https://github.com/gavincyi/gavincyi.github.io/assets/10500805/3389a394-c227-4bee-9479-080cc6873788
+thumbnail-img: https://github.com/gavincyi/gavincyi.github.io/assets/10500805/3389a394-c227-4bee-9479-080cc6873788
 tags: [numpy, quant, quantdev, finance, gpu, cython]
 comments: true
 ---
