@@ -69,3 +69,13 @@ and it still works so well in both presentation and editing. So, please, don't u
 is free for Google Slides.
 
 ![IMG_5206](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/4ba30d5f-239c-4aa0-9e0b-2ca93de06c70)
+
+## Live Conferences Go Virtual?
+
+It is the first live PyCon I participated after pandemic. I recalled the PyCon IE team ran a successful 24-hour virtual
+PyCon (called PyJamas in 2020). A few PyCons, e.g. PyCon SG, are just frozen at the history of 2019. I talked with a
+few organisers and they mentioned the difficulty of enterprise sponsorships after pandemic. Not to mention most corps 
+are relunctant to open the offices to host these public events, even when the office are at least half emptied on Friday.
+Do most live conferences move to virtual due to lack of funding? Or, do the enterprises cut the budgets of sponsoring
+the conferences as they observe most stay online? It is a chicken-and-egg problem.
+
