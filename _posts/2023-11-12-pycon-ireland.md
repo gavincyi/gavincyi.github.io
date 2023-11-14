@@ -1,3 +1,10 @@
+---
+layout: post
+title: Thoughts after PyCon IE 2023
+tags: [pycon]
+comments: true
+---
+
 Yes, I flew to Dublin again, following my previous week at the Dublin Marathon. 
 I'm not sure why I am so drawn to Dublin, but it's true that this was my fourth time 
 to the city. This time, I went there for PyCon Ireland 2023.
