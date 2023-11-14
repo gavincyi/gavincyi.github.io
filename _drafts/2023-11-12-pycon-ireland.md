@@ -12,10 +12,8 @@ were run in parallel. The topics still covers the following technical areas
 - Machine Learning
 - Data Analysis
 
-
-
-The organiser fought hard to strike the balance across various backgrounds of attendees, so other 
-topics are included. For example, one of the keynote talks is 
+The organiser fought hard to strike the balance across various backgrounds of attendees, so a diversed 
+range of topics are included. For example, one of the keynote talks is 
 "Child Prodigies and 6 Figure Salaries? Discussing Realist Methods and Goals in Python Education",
 of which the 6 figure salary is the highlight of the day.
 
