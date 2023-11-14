@@ -4,11 +4,11 @@ Ireland 2023.
 
 It was a great time there though the time was too short due to chores during weekend. 
 My first time there was in 2019 and it was hosted in the same venue, Radisson Blu. I was glad to see
-both the familar and new faces in the conference.
+both the ~~old~~ familar and new faces in the conference.
 
 ## Same old
 
-The conference is hosted in a 2-day length, and most of the time, two speaker and workshop sessions 
+It is hosted in a 2-day length, and most of the time, two speaker and workshop sessions 
 were run in parallel. The topics still covers the following technical areas
 
 - Core Python
@@ -45,7 +45,7 @@ Therefore, I wasn't surprised to often come across with engineers from FAANG or 
 Though it is declared that Ireland is no longer a tax heaven under the new [BEPS 2.0](https://www.ey.com/en_uk/tax/base-erosion-profit-shifting-beps),
 an English speaking capital still attracts a diversified background of engineers.
   
-![IMG_5214](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/9987fcad-3e21-4d90-b825-5064c8c3629f)
+![IMG_5215](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/16b2c72f-ba8b-42ef-9641-f7b46ba709f7)
 
   
 3. Not Solely Software
@@ -55,7 +55,17 @@ Infrastructure-as-Code (IaC). When I talked with a few attendees, I heard one of
 is Python scripts in AWS Lambda. Also, some of them reflected that now they took up more responsibilities
 in cloud deployment and infrastructure than before. It aligns with my understanding that the trend
 in software engineering is - software is no longer the plat in the menu. The term "application" is replaced
-by "service", which means a full stack in the right infrastructure. 
+by "service", which means a full stack in the right infrastructure. But, why still AWS? To be fair, where
+are GCP and MS Azure? 
 
 ![IMG_5204](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/99ada639-ba6c-43bf-b711-b6a57f1b3951)
 
+4. No more PowerPoints
+
+Honestly, I hate M*******t's products, so I am so glad that I didn't see anyone using PowerPoints in the presentation
+materials. Now, the speakers adapt better alternative to PowerPoints. We all know that these alternatives are
+more powerful and charming than the dull and tedious PPTX. I used a product derived from [RemarkJS](https://github.com/gnab/remark)
+and it still works so well in both presentation and editing. So, please, don't use PPTX anymore, as long as it
+is free for Google Slides.
+
+![IMG_5206](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/4ba30d5f-239c-4aa0-9e0b-2ca93de06c70)
