@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Thoughts after PyCon IE 2023
-thumbnail-img: https://github.com/gavincyi/gavincyi.github.io/assets/10500805/3429b7cd-d900-482b-ae24-2081540d871d
+cover-img: https://github.com/gavincyi/gavincyi.github.io/assets/10500805/3429b7cd-d900-482b-ae24-2081540d871d
 tags: [pycon]
 comments: true
 ---
