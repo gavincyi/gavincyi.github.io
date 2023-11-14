@@ -48,3 +48,14 @@ an English speaking capital still attracts a diversified background of engineers
 ![IMG_5214](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/9987fcad-3e21-4d90-b825-5064c8c3629f)
 
   
+3. Not Solely Software
+
+An interesting phenomenon is a few talks and workshops are around Python in cloud service and 
+Infrastructure-as-Code (IaC). When I talked with a few attendees, I heard one of the Python use cases
+is Python scripts in AWS Lambda. Also, some of them reflected that now they took up more responsibilities
+in cloud deployment and infrastructure than before. It aligns with my understanding that the trend
+in software engineering is - software is no longer the plat in the menu. The term "application" is replaced
+by "service", which means a full stack in the right infrastructure. 
+
+![IMG_5204](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/99ada639-ba6c-43bf-b711-b6a57f1b3951)
+
