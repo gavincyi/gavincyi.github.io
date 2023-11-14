@@ -1,4 +1,8 @@
-It was a great time in PyCon Ireland 2023, though the time was too short due to chores during weekend. 
+Yes, I fled to Dublin again after my previous week of Dublin Marathon. I ain't sure why I am so stuck
+in Dublin, but it's true that it's my forth time to this city. This time I went there for PyCon
+Ireland 2023.
+
+It was a great time there though the time was too short due to chores during weekend. 
 My first time there was in 2019 and it was hosted in the same venue, Radisson Blu. I was glad to see
 both the familar and new faces in the conference.
 
@@ -21,7 +25,7 @@ of which the 6 figure salary is the highlight of the day.
 
 Pizza night is still remained on the first conference day for attendees to network, while it seems
 that the pub quiz night was too exhausting either for the origaniser to host, or the attendees to 
-ponder after a long day with beers, so I can avoid the faux pas moment of being brainteased.
+ponder after a long day with beers. At lease, I can avoid the faux pas moment of being brainteased.
 
 
 ## Observations in PyCon Ireland 2023
@@ -34,5 +38,13 @@ I am one of those rushing to the new gold mine.
 
 ![IMG_5218](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/3939ff43-6b7c-49db-820a-84168017656b)
 
+2. Multinational
+
+In one of the reports in 2020, it showed Dublin ranked the top European Headquarter locations per capita.
+Therefore, I wasn't surprised to often come across with engineers from FAANG or other multinational corps.
+Though it is declared that Ireland is no longer a tax heaven under the new [BEPS 2.0](https://www.ey.com/en_uk/tax/base-erosion-profit-shifting-beps),
+an English speaking capital still attracts a diversified background of engineers.
+  
+![IMG_5214](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/9987fcad-3e21-4d90-b825-5064c8c3629f)
 
   
