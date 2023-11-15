@@ -26,8 +26,7 @@ were run in parallel. The topics still cover the following technical areas
 
 The organiser fought hard to strike a balance across various backgrounds of attendees, so a diverse 
 range of topics was included. For example, one of the keynote talks was 
-"Child Prodigies and 6 Figure Salaries? Discussing Realist Methods and Goals in Python Education"
-- 6 figure salary is the highlight of the day.
+"Child Prodigies and 6 Figure Salaries? Discussing Realist Methods and Goals in Python Education" - 6 figure salary is the highlight of the day.
 
 ![image](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/b5124a47-5820-41eb-831f-781a574e1b93)
 
@@ -37,7 +36,7 @@ ponder after a long day with beers. At least, I can avoid the faux pas moments o
 
 ## Observations in PyCon Ireland 2023
 
-1. Still Machine Learning But Also LLM
+### 1. Still Machine Learning But Also LLM
 
 Machine Learning remains a hot topic at most PyCon events. Thanks to OpenAI and ChatGPT,
 NLP and LLM have started to dominate. Apart from talks, the NLP workshop was quite full as well. 
@@ -45,7 +44,7 @@ I must admit that I am one of those rushing to this new gold mine.
 
 ![IMG_5218](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/3939ff43-6b7c-49db-820a-84168017656b)
 
-2. Multinational
+### 2. Multinational
 
 A 2020 report showed Dublin ranked as the top European Headquarters location per capita.
 Therefore, I wasn't surprised to often encounter with engineers from FAANG or other multinational 
@@ -55,7 +54,7 @@ an English speaking capital still attracts a diverse background of engineers.
 ![IMG_5215](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/16b2c72f-ba8b-42ef-9641-f7b46ba709f7)
 
   
-3. Not Solely Software
+### 3. Not Solely Software
 
 An interesting trend is that several talks and workshops focused on Python in cloud service and 
 Infrastructure-as-Code (IaC). When I spoke with some attendees, I learnt that one of the common
@@ -66,7 +65,7 @@ But, why still AWS? To be fair, why are GCP and MS Azure less mentioned in PyCon
 
 ![IMG_5204](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/99ada639-ba6c-43bf-b711-b6a57f1b3951)
 
-4. No more PowerPoint
+### 4. No more PowerPoint
 
 Honestly, I dislike M*******t's products, so I am pleased to see no one using PowerPoint for their
 presentations. Now, the speakers have adapted better alternative to PowerPoint. These alternatives are
