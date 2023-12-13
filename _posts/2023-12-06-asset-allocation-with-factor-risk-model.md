@@ -2,8 +2,8 @@
 layout: post
 title: Navigating Alpha Sizing: Insights from a Factor Risk Model and Cryptocurrency Experiment
 subtitle: Alpha Sizing, Factor Risk Modeling, and the Quest for Portfolio Perfection
-thumbnail-img: https://github.com/gavincyi/gavincyi.github.io/assets/10500805/e731c30b-e663-47ae-a156-74425a5e46c1
-tags: [alpha-generation, portfolio, alphasizing, quantfinance]
+cover-img: https://github.com/gavincyi/gavincyi.github.io/assets/10500805/e731c30b-e663-47ae-a156-74425a5e46c1
+tags: [alphageneration, portfolio, alphasizing, quantfinance]
 comments: true
 ---
 
