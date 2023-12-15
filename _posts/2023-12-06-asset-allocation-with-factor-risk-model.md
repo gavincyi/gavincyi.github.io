@@ -7,8 +7,6 @@ tags: [alphageneration, portfolio, alphasizing, quantfinance]
 comments: true
 ---
 
-## Background
-
 It was a perplexing puzzle to me when I first read Giuseppe A. Paleologo's book "Advanced Portfolio Management" in 2022. The book (in Chapter 6) introduces the concept of alpha sizing, a technique for allocating positions based on expected returns of alphas and risk. After an in-depth empirical analysis of various sizing rules, the author provides a concise insight:
 
 > Proportional sizing method beats other common methods, e.g. mean-variance portfolio
@@ -41,14 +39,8 @@ In the book, simulated alphas were generated from the lookahead one-month return
 
 - Extreme Volatility and Skewness: Cryptocurrencies are known for their extreme price volatility and skewed returns, which can present unique challenges and opportunities for alpha generation.
 
-The cryptocurrency market shares some similarities with the equity market and even exhibits correlations with it (source). Both markets feature a large number of instruments, requiring the construction of universes over time. While the author constructed portfolios consisting of 50, 100, and 200 stocks from RAY, I selected up to 600 instruments from the top 50% trading volume in the crypto universe.
+The cryptocurrency market shares some similarities with the equity market and even exhibits [correlations](https://www.institutionalinvestor.com/article/2bstqvrdta4idnp83c6ps/portfolio/crypto-is-becoming-more-correlated-to-stocks-and-its-your-fault) with it. Both markets feature a large number of instruments, requiring the construction of universes over time. While the author constructed portfolios consisting of 50, 100, and 200 stocks from RAY, I selected up to 600 instruments from the top 50% trading volume in the crypto universe.
 Furthermore, in my experiment, I not only generated a lookahead alpha (referred to as the "magical alpha") but also explored a few academic factors.
-
-
-The cryptocurrency market shares some similarities with the equity market and even exhibits [correlations](https://www.institutionalinvestor.com/article/2bstqvrdta4idnp83c6ps/portfolio/crypto-is-becoming-more-correlated-to-stocks-and-its-your-fault) with it. Both markets feature a large number of instruments, requiring the construction of universes over time. While the author constructed portfolios consisting of 50, 100 and 200 stocks from RAY, I selected up to 600 instruments from the top 50% trading volume in the crypto universe.
-
-Finally, I generated not only a lookahead alpha (named as "magical alpha") but also a few more academic factors in the experiment.
-
 ## Academic Factors
 
 Academic factors represent specific drivers of asset returns and are identified as positive contributors to market returns in the long run. In the equity markets, for example, the momentum factor has been shown to generate positive returns across global indices and developed markets. The HML (High-minus-Low) factor compares companies with high book-to-market ratios to those with low ones, serving as a standard representation of the value factor. These factors often exhibit positive gross Sharpe ratios (excluding transaction costs) but slightly negative net Sharpe ratios (factoring in transaction costs).
@@ -59,20 +51,19 @@ Given the availability of market data (only daily prices and volumes), these sig
 4. Volatility: This factor suggests that assets with lower volatility tend to generate higher risk-adjusted returns than those with higher volatility. The signal is defined as the 6-month rolling volatility difference from the cross-sectional mean.
 5. Liquidity: This factor suggests that less liquid assets may offer higher expected returns as compensation for their lower liquidity. The signal is defined as the inverse of volume (in USD) logarithmically transformed.
 
-All signals are assumed to trade in a dollar-neutral portfolio (net position = 0) without any leverage (sum of absolute positions = 1). They are consistently normalized (recursively) on a cross-sectional level, with a winsorization of +/-3.0 applied.
+All signals are assumed to trade in a dollar-neutral portfolio (net position = 0) without any leverage (sum of absolute positions = 1). Their scores are consistently normalized (recursively) on a cross-sectional level, with a winsorization of +/-3.0 applied. Finally the scores are multiplied with its volatility to convert into the alphas (Alpha = Scores x Volatility x IC [*](https://www.pm-research.com/content/iijpormgmt/20/4/9))
 
 Next, several performance metrics, such as the Sharpe ratio, are computed for these signals using the five sizing approaches mentioned earlier.
 
 ## You need a stronger stomach for MV portfolios
 
-First, let's examine the Sharpe ratio. The table below presents results that align with the book's suggestions—generally, the proportional rule outperforms other approaches. The MV (Mean-Variance) portfolio turns a profitable liquidity alpha signal into a negative Sharpe ratio. The only exception for the MV portfolio is the momentum signal, and even its relative improvement is only modest.
-
+First, let's examine the Sharpe ratio. The table below presents results that align with the book's suggestions—generally, the proportional rule outperforms other approaches. The MV (Mean-Variance) portfolio is the worst sizing rule in general The only exception for the MV portfolio is the momentum signal, and even its relative improvement is only modest.
  
+<img width="726" alt="4kmjLSYS3xc-vBs8AuLK1oR9Btlawtumcagq1kNxE8QglN8dNtj8ITd3-IGxG4h7vU3sZd1dzaIUxuJNYolHA648AeQYNrTJ_S0QoPLkYHjlGYXkY70YqooV-Ddl" src="https://github.com/gavincyi/gavincyi.github.io/assets/10500805/6a14b7b6-778c-465c-b49f-348b6fa71376">
 
+Furthermore, the MV portfolio experiences the most significant maximum drawdown among all signals. Its maximum drawdown is 3-5 times higher than that of the proportional approaches. This means that running an MV portfolio requires a stronger stomach, especially when the market takes a downturn.
 
-Furthermore, the MV portfolio experiences the most significant maximum drawdown among all signals. Its maximum drawdown is 3-5 times higher than that of the proportional approaches. This implies that running an MV portfolio requires a stronger stomach, especially when the market takes a downturn.
-
-
+<img width="726" alt="A0IzIiebxT_vG92l9prLfxkWLbCP6sBPmVIZsCitT2ptSA-4RdAA0azbSyma1zfylLR8JYHmTci0KMwiy6GMISoR1J_tM3anAtpQrIiSNZUspjJAsiVW20NbCJmU" src="https://github.com/gavincyi/gavincyi.github.io/assets/10500805/bbc58cbb-836c-4297-9c75-771ce3028ff2">
 
 Consistent with the book's findings, the 75% shrunken MV rule emerges as the best alternative to the original MV rule. Notably, it also significantly reduces the maximum drawdown.
 
@@ -82,16 +73,17 @@ Smart readers may have raised a critical question in an earlier section—why do
 
 The original experiment described in the book generated instruments with returns that are independent of each other, making it logical to consider only the instrument variances in the MV (Mean-Variance) rule. However, in practice, market instruments are often correlated, and for a large universe (as many as 600 instruments in our example), estimating empirical covariances becomes a challenging task.
 
-
 To estimate an N x N covariance matrix, N x (N+1) / 2 relationships need to be estimated. Achieving a sufficiently converged covariance matrix in the financial market requires an enormous number of data samples, which is often impractical to obtain. Additionally, financial time series data often exhibits autocorrelation characteristics. This is where dimensionality reduction techniques come into play.
 
 Creating a factor risk model from a smaller universe generates factors and their returns that have a significant influence on the market. The risk model then extends these factor exposures to a larger universe to estimate the covariances.
 
-As mentioned in a previous post, the process begins by constructing an estimation universe to generate a factor risk model. This universe is selected based on the top 10% trading volume and involves the identification of the ten most significant technical factors using Principal Component Analysis (PCA). The number of instruments in the model and estimation universe is as follows:
+As mentioned in a previous [post](https://gavincyi.github.io/2023-07-24-introduction-to-factor-pricing-model-risk-model/), the process begins by constructing an estimation universe to generate a factor risk model. This universe is selected based on the top 10% trading volume and involves the identification of the ten most significant technical factors using Principal Component Analysis (PCA). The number of instruments in the model and estimation universe is as follows:
 
 
-Model Universe: Top 50% trading volume
-Estimation Universe: Top 10% trading volume
+- Model Universe: Top 50% trading volume
+- Estimation Universe: Top 10% trading volume
+
+![z104tkbL7_o2_WmnriVOrFgA4xZUbUEota28OAWvrhFYZ-_KMXic0dWuMnaYqW2WwEeIYzm_NCkf4cjfVYmK1UHmuWJvJ1z-6zlZgPL_FqnihiPwuY7GXQldK-lc](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/9abba062-0ba5-46d3-ac26-202f4496090d)
 
 
 Subsequently, the risk model is transformed using the returns of the model universe to derive the covariances within the model universe. Although I estimated both the volatilities and correlations of the model universe using 180-day returns, the framework supports estimating correlations with longer rolling windows and volatilities with shorter windows for a more responsive volatility estimation.
@@ -110,10 +102,12 @@ Similar to previous rules, the corrected version of the MV (Mean-Variance) portf
 
 With covariances estimated from the factor risk model, the Sharpe ratio of the MV portfolio exhibits significant improvement, particularly for the shrunken MV portfolios (e.g., 75%). Notably, the MV portfolio based on the liquidity signal restores the Sharpe ratio to positive territory. In several signals, such as reversal, the 75% shrunken MV portfolio produces the best Sharpe ratio.
 
+<img width="726" alt="H8EyY2j6TKnHb3A1A-bQ5egq3MiQ6zIq5RHt1zdeWya4c6GsOmfbv80FNLsdBUKSyCm842SUw0vSrKU5h3OEw1Mgkcr8nnpdOurCdCMBkqdXptcmNoX3dymjZcuG" src="https://github.com/gavincyi/gavincyi.github.io/assets/10500805/d1e68c5b-0f98-495d-8d48-a791dd42c045">
 
 
 A similar improvement is observed in terms of maximum drawdown. The 75% MV portfolio experiences the lowest maximum drawdown in the momentum and reversal signals.
 
+<img width="726" alt="LsSJQQ_RuH-43HfeWQ_uvewYmXfpG0KzP2lqGa_Mi09G1dyoKQ02666KJb4NwUoCKVFC0UCEyml7p8lGmtB1wFc2HR_s66mBOtQeOVHdGGK3znWXxsQ3R1nrpJXp" src="https://github.com/gavincyi/gavincyi.github.io/assets/10500805/d8632839-21a7-43bb-aaad-ac567acbe8a9">
 
 
 These results underscore the critical role of covariance estimation in the MV allocation rule. Even with the same variance estimation, accurate correlation estimation makes a substantial difference in alpha sizing.
