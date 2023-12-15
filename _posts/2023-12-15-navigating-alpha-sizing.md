@@ -91,7 +91,7 @@ Subsequently, the risk model is transformed using the returns of the model unive
 The estimated covariances are then used to derive the MV optimal portfolio using the formula:
 
 $$
-w^* = \Sigma w
+w^* = \Sigma^{-1} w
 $$ 
 
 Here, \\\(w^*\\\) is the MV optimal portfolio, \\\(\Sigma\\\) is the covariance matrix, and \\\(w\\\) is the original signal.
