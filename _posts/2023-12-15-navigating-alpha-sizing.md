@@ -75,7 +75,7 @@ The original experiment described in the book generated instruments with returns
 
 To estimate an N x N covariance matrix, N x (N+1) / 2 relationships need to be estimated. Achieving a sufficiently converged covariance matrix in the financial market requires an enormous number of data samples, which is often impractical to obtain. Additionally, financial time series data often exhibits autocorrelation characteristics. This is where dimensionality reduction techniques come into play.
 
-Creating a factor risk model from a smaller universe generates factors and their returns that have a significant influence on the market. The risk model then extends these factor exposures to a larger universe to estimate the covariances.
+Creating a [factor risk model](https://github.com/factorpricingmodel/factor-pricing-model-risk-model) from a smaller universe generates factors and their returns that have a significant influence on the market. The risk model then extends these factor exposures to a larger universe to estimate the covariances.
 
 As mentioned in a previous [post](https://gavincyi.github.io/2023-07-24-introduction-to-factor-pricing-model-risk-model/), the process begins by constructing an estimation universe to generate a factor risk model. This universe is selected based on the top 10% trading volume and involves the identification of the ten most significant technical factors using Principal Component Analysis (PCA). The number of instruments in the model and estimation universe is as follows:
 
@@ -122,6 +122,8 @@ In addition to the above conclusion, based on the empirical results from the cry
 
 For practitioners of the Kelly Criterion, this result aligns with conventional wisdom that fractional Kelly (such as quarter Kelly or even 1/8 Kelly) is the optimal capital growth strategy, as explained by [MacLean, L., E. O. Thorp, and W. T. Ziemba (2010)](https://www.researchgate.net/publication/227623956_Long-term_capital_growth_the_good_and_bad_properties_of_the_Kelly_and_fractional_Kelly_capital_growth_criteria).
 
-IMeanwhile, it has become a standard [practice](https://ideas.repec.org/p/bge/wpaper/92.html) in the industry to shrink estimated covariances. If you are already employing covariance shrinkage techniques, you may find it beneficial to reduce the shrinkage parameter in the MV sizing rule or potentially eliminate the need for shrinkage altogether.
+Meanwhile, it has become a standard [practice](https://ideas.repec.org/p/bge/wpaper/92.html) in the industry to shrink estimated covariances. If you are already employing covariance shrinkage techniques, you may find it beneficial to reduce the shrinkage parameter in the MV sizing rule or potentially eliminate the need for shrinkage altogether.
 
 Finally, despite some academic literature suggesting the use of the 1/N (proportional-sized) rule in large universes and the MV rule in small universes, based on the results presented above, I believe that the 75% shrunken MV rule is the most suitable rule to apply across all universe sizes, especially when faced with uncertainty in choosing between the proportional and MV portfolio.
+
+If you are interested to walk through the result in details, please feel free to look into its [notebook](https://colab.research.google.com/github/factorpricingmodel/factor-pricing-model-risk-model/blob/main/examples/notebook/crypto_empirical_analysis_alpha_sizing_rules.ipynb) and shoot me your questions.
