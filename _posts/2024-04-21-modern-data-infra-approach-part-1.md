@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Modern Data Infrastructure Approach in Quant Finance - Part 1
-subtitle: What are the problems we are facing?
+subtitle: Business requirements, challenges and competitions
 cover-img: https://github.com/gavincyi/gavincyi.github.io/assets/10500805/812f4afe-b79b-4e7f-b751-baccd9b73147
 tags: [data, quantfinance]
 comments: true
@@ -27,17 +27,25 @@ In the 1960s, Gordon Moore, co-founder of Intel, predicted that computing power 
 
 Generally, the growth of storage capability, computing power and also transmission speed mirrors the surge of both dimensions and depth in data storage. Over time, images have more pixels, and videos are in better resolutions, and text sourced from various media and social platforms grows exponentially. It is natural to assume that the need for bigger storage capability in the financial industry aligns with the general trend.
 
+<img width="718" alt="image" src="https://github.com/gavincyi/gavincyi.github.io/assets/10500805/5b581b21-eade-4c98-af3a-dd09451dbce3">
+
 Interestingly, the core fundamental and economic data have not grown at the same pace. Governments still retain the cadence to publish economic data, like CPI, on a quarterly or monthly basis. Company filings are only required annually, while most companies announce the financial performance quarterly. Though the number of stocks are surging, the rate is well below the exponential rate as technology improves. Handling these limited sizes of data has now become a more trivial task for most analysts than a decade ago.
 
 In the trading side, not only the trading volumes and executions grow, but also the higher cadence and deeper market book requires a consistent improvement in data infrastructure. Exchanges stream the market data with all the executions, market book snapshot, and sometimes the order changes to all market participants. I recalled, in my first engineering job in a boutique HFT firm, due to the limited computing power and flash storage, most strategies employed only the L2 order book, updated in every 500 ms, and executions. We often needed to estimate how many ring buffers and arrays we could store in the RAM, based on the number of trading instruments and expected execution arrival times, to avoid the out-of-memory in the application and system. Now, engineers may not need to worry too much about the storage constraint, but more about the access and write performance.
+
+![image](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/b40996ad-ba6e-4884-940a-3db1f2fa055c)
 
 Finally, the unlimited storage capability we now seem to have (for example, look into our Gmail mailbox storage now) has led to a new stream in quantitative finance - alternative data. Conventional market data is typically time-series based and combined with financial reports and official publications, while the alternative data is composed of various types of unstructured data, retrieved from various API sources and web scraping methods. The examples of alternative data includes retail market transaction data (e-commence), social media posts and trends, weather forecasts, images and videos, and geographical data. These sets of data can give a great insight about the sales and revenue of individual companies, demand and supply of macro products, and country economies. The questions mainly surround the format and platform to store the gigantic size of unconventional data.
 
 ## 2. Data processing
 
+![image](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/f33d9b10-8bfa-4ab8-bd5c-2e2c0690f1cc)
+
 In most cases, orchestrating data pull and pipelines is crucial in quant finance data infrastructure. Pulling data from various data sources is just the beginning of the data management journey. We then normalise the data into the data storage, clean it and send notifications if any hiccups occur. Exposing the data to downstream applications and users for data analysis is crucial, with data usage dictating storage format in data processing, and its location to live.
 
 Previously, data orchestration mainly surrounded around the parallel / asychornized job runs in a single instance or limited computing power. Now, the discussion has been shifted to the resilience and scalability in multi-region clusters, and running jobs in various computing instances in CPU and GPU with careful considerations in FinOps.
+
+![image](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/97faa091-f297-4efd-a298-a3a1f53c3c4b)
 
 In the meantime, data streaming is another related area to process the continuous data, while it is mostly used in the event driven system. It composes the critical part in the trading infrastructure in handling market data and events. Raw market data is streamed directly from the exchanges or data vendors through TCP/IP sockets, UDP multicast, or websockets. Institutional market data is normally streamed in low-latency communication protocols. For example, FAST for market data and FIX for order / market access. The specific protocol ensures the optimal transmission rate across the internet. 
 
@@ -46,6 +54,8 @@ Then the data is ingested with parsing and validation. Usually the ingestion spe
 Finally, the raw market data is conveyed into derived data. For example, the trade prices are derived into volume and time average prices (VWAP and TWAP). Orders sitting in the book are processed into the order flow and imbalance analysis to detect the iceberg orders and institutional flows. The process power determines the synchronisation of primary and secondary level data.  
 
 ## 3. Data Validation and Privacy
+
+![image](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/60dccafa-5cef-4a05-8906-247601c76131)
 
 Data validation is not only about avoiding stale data interrupting the current data infrastructure, but also handling outlier data in with statistical approaches in quantitative areas. It is often that the financial instrument prices are scaled before transmission. The examples are the stocks in London Stock Exchange (LSE) are listed in pence. The convention and scaling factor of the same instrument may vary across different data providers. One of the famous coding horrors was users thought to place the orders in pences but actually in pounds. So the data validation is vital before and after the raw data is conveyed to data pipelines. 
 
