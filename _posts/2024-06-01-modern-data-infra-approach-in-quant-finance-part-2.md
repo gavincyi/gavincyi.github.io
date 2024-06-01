@@ -3,11 +3,14 @@ layout: post
 title: Modern Data Infrastructure Approach in Quant Finance - Part 2
 subtitle: What are the problems we are facing?
 cover-img: 
-tags: [data, quantfinance]
+tags: [data, dataengineering, quantfinance]
 comments: true
 ---
 
 ![image](https://github.com/gavincyi/gavincyi.github.io/assets/10500805/1bad48a6-08c3-4a9b-aa88-16ec892b1739)
+
+In the late '80s and early '90s, if you saw a company still using pens and paper instead of typewriters, you would know it was unlikely to survive for long. Over time, we've witnessed an evolution in data processing and storage: from typewriters to computers in the late '90s, from floppy disks to CD-ROMs in the 2000s, and finally from USB drives to cloud storage today. The format and medium of data storage have changed rapidly since personal computers gained popularity. The only constant has been the term "file" to describe storage units. In the following sections, we will explore how and where objects, sets of data, and mixtures of structured and unstructured data are stored in modernised data infrastructure.
+
 
 ## Object storage
 
