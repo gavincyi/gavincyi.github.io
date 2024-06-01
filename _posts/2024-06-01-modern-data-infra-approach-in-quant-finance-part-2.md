@@ -2,7 +2,7 @@
 layout: post
 title: Modern Data Infrastructure Approach in Quant Finance - Part 2
 subtitle: What are the problems we are facing?
-cover-img: 
+cover-img: https://github.com/gavincyi/gavincyi.github.io/assets/10500805/d15b76de-3b75-4cb2-b016-c880e963bed1
 tags: [data, dataengineering, quantfinance]
 comments: true
 ---
