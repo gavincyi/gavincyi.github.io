@@ -59,7 +59,8 @@ Even though MSTR's KPI is to keep an increasing BTC holdings per share, the inve
 
 The 21/21 plan is to raise the fund from both the equity and debt market to accumulate the BTC holdings. What amazes the practitioners is the financial engineering part in issuing the convertible bonds to raise the significant amount of capital for BTC acquisition. As mentioned before, MSTR called the expensive debt paying 6.125% interest rate in October 2024, and then [issued](https://www.microstrategy.com/press/microstrategy-announces-pricing-of-convertible-senior-notes-11-20-2024) the new convertible bond at 0% interest rate in November. The new convertible bond is unsecured, senior obligations, and will mature in December 2029. The market reacted well after the announcement that the stock price jumped around 7% right after. The table below lists all the active MSTR convertible bonds. The (notional weighted) average of the interest rates is 0.48%, which is an absolutely low borrowing cost for MSTR.
 
-| Principal Amount (M) | Interest Rate | Issue Date | Maturity Date | Strike | |-----------------------|---------------|------------|---------------|---------|
+| Principal Amount (M) | Interest Rate | Issue Date | Maturity Date | Strike | 
+|-----------------------|---------------|------------|---------------|---------|
 | $1,050 | 0.000% | Feb-21 | Feb-27 | $143.2 | 
 | $800 | 0.625% | Mar-24 | Mar-30 | $149.8 | 
 | $600 | 0.875% | Mar-24 | Mar-31 | $232.7 | 
