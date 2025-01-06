@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: A Python and C++ quant developer
+subtitle: Always enthusiastic in joining the dots
 ---
 
 I have been working in quant research and development for 10+ years in
