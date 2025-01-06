@@ -7,6 +7,7 @@ tags: [microstrategy,btc,volatility,gamma]
 comments: true
 ---
 
+MicroStrategy has redefined how corporations engage with the cryptocurrency market, combining bold bitcoin acquisitions with sophisticated financial strategies. Under the leadership of Michael Saylor, the company has implemented an innovative playbook that merges capital raising, convertible bond issuance, and equity financing to expand its bitcoin holdings while navigating market volatility. This article unpacks the layers of MicroStrategy's strategic maneuvers—dubbed the "21/21 Plan"—along with the implications of its aggressive accumulation of bitcoin, the role of convertible bonds, and the financial engineering that has captivated institutional investors. From the NAV premium to the dynamics of convertible arbitrage, this is a closer look at the fascinating game MicroStrategy is playing in the intersection of technology, finance, and cryptocurrency.
 
 ## 21/21 Plan
 
@@ -59,7 +60,7 @@ Even though MSTR's KPI is to keep an increasing BTC holdings per share, the inve
 
 The 21/21 plan is to raise the fund from both the equity and debt market to accumulate the BTC holdings. What amazes the practitioners is the financial engineering part in issuing the convertible bonds to raise the significant amount of capital for BTC acquisition. As mentioned before, MSTR called the expensive debt paying 6.125% interest rate in October 2024, and then [issued](https://www.microstrategy.com/press/microstrategy-announces-pricing-of-convertible-senior-notes-11-20-2024) the new convertible bond at 0% interest rate in November. The new convertible bond is unsecured, senior obligations, and will mature in December 2029. The market reacted well after the announcement that the stock price jumped around 7% right after. The table below lists all the active MSTR convertible bonds. The (notional weighted) average of the interest rates is 0.48%, which is an absolutely low borrowing cost for MSTR.
 
-| Principal Amount (M) | Interest Rate | Issue Date | Maturity Date | Strike | 
+| Principal Amount (M) | Interest Rate | Issue Date | Maturity Date | Strike |
 |-----------------------|---------------|------------|---------------|---------|
 | $1,050 | 0.000% | Feb-21 | Feb-27 | $143.2 | 
 | $800 | 0.625% | Mar-24 | Mar-30 | $149.8 | 
@@ -148,4 +149,6 @@ Since the Sep 2028 bond was issued, the stock price ($168.60 as of Sep 2024) is 
 ## Conclusion
 
 The market always moves faster than I anticipate. When I was writing about this story, there were a few more stories about MSTR unfolding every day. It became much more difficult to append layers and layers of new information and redo the research in the new materials. In the meanwhile, I am glad to see that crowdsourcing, like [saylortracker.com](https://saylortracker.com/) and [mstr-tracker](https://mstr-tracker.com/), is actually playing a critical role in unfolding Michael Saylor's magic in the market. Though most of them are actually the ethanists supporting the crypto market and MSTR strategy, the transparent information helps others to get through the game that Michael is purposing - either astonishing the creativity behind the financial engineering, or dismaying the inaccurate information spread through the hype. 
+
+
 
