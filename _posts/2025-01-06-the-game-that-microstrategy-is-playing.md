@@ -154,6 +154,7 @@ The market always moves faster than I anticipate. When I was writing about this 
 
 These readings are released later than when I have finished my writing, and this gives further updates on this story
 
-["If bitcoin is the future, what explains MicroStrategy’s need for speed?"  - FT](https://www.ft.com/content/e25e9938-7bb3-4ec7-8c51-ce9177f71996)
-["MicroStrategy Buys Bitcoin After Adding Preferred Offering" - Bloomberg](https://finance.yahoo.com/news/microstrategy-buys-bitcoin-adding-preferred-131217909.html)
+- ["If bitcoin is the future, what explains MicroStrategy’s need for speed?"  - FT](https://www.ft.com/content/e25e9938-7bb3-4ec7-8c51-ce9177f71996)
+
+- ["MicroStrategy Buys Bitcoin After Adding Preferred Offering" - Bloomberg](https://finance.yahoo.com/news/microstrategy-buys-bitcoin-adding-preferred-131217909.html)
 
