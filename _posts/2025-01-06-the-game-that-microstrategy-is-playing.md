@@ -7,7 +7,7 @@ tags: [microstrategy,btc,volatility,gamma]
 comments: true
 ---
 
-MicroStrategy has redefined how corporations engage with the cryptocurrency market, combining bold bitcoin acquisitions with sophisticated financial strategies. Under the leadership of Michael Saylor, the company has implemented an innovative playbook that merges capital raising, convertible bond issuance, and equity financing to expand its bitcoin holdings while navigating market volatility. This article unpacks the layers of MicroStrategy's strategic maneuvers—dubbed the "21/21 Plan"—along with the implications of its aggressive accumulation of bitcoin, the role of convertible bonds, and the financial engineering that has captivated institutional investors. From the NAV premium to the dynamics of convertible arbitrage, this is a closer look at the fascinating game MicroStrategy is playing in the intersection of technology, finance, and cryptocurrency.
+MicroStrategy (MSTR) has been progressing aggressively in acquiring Bitcoin into their long term digital asset. Michael Saylor outlined the strategic plan to turn MSTR into a ["Bitcoin Treasury Company"](https://www.microstrategy.com/investor-relations), and even a ["Bitcoin Bank"](https://hackernoon.com/michael-saylor-wants-to-turn-microstrategy-into-a-trillion-dollar-bitcoin-bank). We are looking into the 21/21 Plan and BTC Yield introduced by MSTR, and then analyzing whether Michael is just selling their equity on the Bitcoin backing asset, or actually more than it. Also, is it just a simple directional bet of the BTC prices?
 
 ## 21/21 Plan
 
@@ -113,7 +113,7 @@ So, MSTR knows exactly what they are selling, and the holders are mostly clear a
 
 Looking further into the holders, I am intrigued to find out how they executed the strategy. As most of them are hedge funds, the filings required by SEC are only the aggregated firm level. The 13-F form covers the net holdings of all the strategies and pods within the same firm, while the firm may have tens or even hundreds of strategies and pods across various strategies. For example, a long-short equity strategy team may hold a long position in the MSTR stock, and the convertible arbitrage strategy team may short a similar size of position in the MSTR stock for the delta hedge. Their net MSTR position is only shown in the 13-F form.
 
-According to the filings, the major bond holders include Allianz and State Street, but some of these holders are in the long position in the bond and positive delta exposure. Looking further into a few participants, I am intrigued to see that a few of them, like Point72, may have positioned correctly in the game.
+According to the filings, the major bond holders include the asset managers, e.g. Allianz and State Street, but some of these holders are in the long position in the bond and positive delta exposure. Looking further into a few participants, I am intrigued to see that a few of them, like Point72, may have positioned correctly in the game.
 
 ### Point72
 
@@ -148,7 +148,12 @@ Since the Sep 2028 bond was issued, the stock price ($168.60 as of Sep 2024) is 
 
 ## Conclusion
 
-The market always moves faster than I anticipate. When I was writing about this story, there were a few more stories about MSTR unfolding every day. It became much more difficult to append layers and layers of new information and redo the research in the new materials. In the meanwhile, I am glad to see that crowdsourcing, like [saylortracker.com](https://saylortracker.com/) and [mstr-tracker](https://mstr-tracker.com/), is actually playing a critical role in unfolding Michael Saylor's magic in the market. Though most of them are actually the ethanists supporting the crypto market and MSTR strategy, the transparent information helps others to get through the game that Michael is purposing - either astonishing the creativity behind the financial engineering, or dismaying the inaccurate information spread through the hype. 
+The market always moves faster than I anticipate. When I was writing about this story, there were a few more stories about MSTR unfolding every day. It became much more difficult to append layers and layers of new information and redo the research in the new materials. In the meanwhile, I am glad to see that crowdsourcing, like [saylortracker.com](https://saylortracker.com/) and [mstr-tracker](https://mstr-tracker.com/), is actually playing a critical role in unfolding Michael Saylor's magic in the market. Though most of them are actually the ethanists supporting the crypto market and MSTR strategy, the transparent information helps others to get through the game that Michael is proposing. I have no intention to conclude whether it is right or wrong, but hope to bring up the question of the fundamental values of the equity - Where does the valuation of MSTR really come from, and also the source of the revenue in the BTC acquisition? 
 
+## Further Readings
 
+These readings are released later than when I have finished my writing, and this gives further updates on this story
+
+["If bitcoin is the future, what explains MicroStrategy’s need for speed?"  - FT](https://www.ft.com/content/e25e9938-7bb3-4ec7-8c51-ce9177f71996)
+["MicroStrategy Buys Bitcoin After Adding Preferred Offering" - Bloomberg](https://finance.yahoo.com/news/microstrategy-buys-bitcoin-adding-preferred-131217909.html)
 
