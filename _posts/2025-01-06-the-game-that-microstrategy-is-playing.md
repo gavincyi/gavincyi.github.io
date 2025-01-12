@@ -7,6 +7,9 @@ tags: [microstrategy,btc,volatility,gamma]
 comments: true
 ---
 
+<sup>Disclaimer:
+The findings and insights shared in this post are based on my personal research and do not constitute any form of investment advice. The information provided is for informational purposes only and should not be considered as a recommendation to buy, sell, or hold any securities. Additionally, these findings are independent of my work, and any opinions expressed here do not reflect the views or positions of my current employer(s). Always conduct your own due diligence or consult with a financial advisor before making any investment decisions. </sup>
+
 MicroStrategy (MicroStrategy) has been aggressively acquiring Bitcoin as part of its long term digital asset strategy. Michael Saylor has outlined the strategic vision to transform MicroStrategy into a ["Bitcoin Treasury Company"](https://www.microstrategy.com/investor-relations), and even a ["Bitcoin Bank"](https://hackernoon.com/michael-saylor-wants-to-turn-microstrategy-into-a-trillion-dollar-bitcoin-bank). In this post, we will examine the 21/21 Plan and the BTC Yield introduced by MicroStrategy, analyzing whether Michael is merely leveraging Bitcoin as a backing asset to sell equity, or if there's more to the strategy. Additionally, we'll explore whether this approach is simply a directional bet on Bitcoin prices, and who are placing the bets with MicroStrategy.
 
 ## 21/21 Plan
